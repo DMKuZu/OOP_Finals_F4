@@ -10,3 +10,5 @@
 #   ///// Added new modifier to the invincibility potion 
 #   ///// Palihug pa check ani if nay mali
 #   // <Strength Potion>
+
+# Added Description, Keypoints, Prompts, Storyline as txt files for clarity at Oct 1, 11:59 pm
