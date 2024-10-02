@@ -13,5 +13,6 @@
 
 # Added Description, Keypoints, Prompts, Storyline as txt files for clarity at Oct 1, 11:59 pm
 
-# Do a git fetch first, then when you do push, push to a new branch
-# I'll handle merging the branches
+# Connect to the https://github.com/DMKuZu/OOP_Finals_F4.git repository
+# If you're using IntelliJ, just commit and push. It will create a new branch for you.
+# I'll handle merging
