@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="added packages" />
+    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Input_Taker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Input_Processor.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +24,7 @@
     <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="master" />
+    <option name="NEW_BASE" value="origin/DMKuZu" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -31,18 +34,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "DMKuZu"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DMKuZu&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/DMKuZu/OOP_Finals_F4.git",
-    "accountId": "72cd583b-8663-4616-a952-b0cd81a54fd0"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DMKuZu/OOP_Finals_F4.git&quot;,
+    &quot;accountId&quot;: &quot;72cd583b-8663-4616-a952-b0cd81a54fd0&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -59,9 +62,10 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/kuzu/IdeaProjects/OOP_Finals_F4",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -129,7 +133,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="DMKuZu" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -138,6 +154,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="setup project" />
     <MESSAGE value="added packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added packages" />
+    <MESSAGE value="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)" />
   </component>
 </project>
