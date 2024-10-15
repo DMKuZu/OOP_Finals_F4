@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)">
+    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="can run the start menu commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Input_Taker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Input_Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/Characters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Command_Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Command_Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Input_Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Input_Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/List_of_Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/List_of_Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Prompt_Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Prompt_Display.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -24,12 +29,17 @@
     <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/DMKuZu" />
+    <option name="NEW_BASE" value="main" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="DMKuZu &lt;127173186+dmkuzu@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +56,9 @@
     &quot;accountId&quot;: &quot;72cd583b-8663-4616-a952-b0cd81a54fd0&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -58,16 +71,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/kuzu/IdeaProjects/OOP_Finals_F4",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;DMKuZu&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kuzu/IdeaProjects/OOP_Finals_F4&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Main" />
+      <module name="OOP_Finals_F4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.Prompt_Display" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -125,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727877488061</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="can run the start menu commands">
+      <option name="closed" value="true" />
+      <created>1729081889566</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729081889566</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +203,21 @@
     <MESSAGE value="setup project" />
     <MESSAGE value="added packages" />
     <MESSAGE value="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)" />
+    <MESSAGE value="Merge pull request #5 from DMKuZu/DMKuZu&#10;&#10;Merge pull request #4 from DMKuZu/main" />
+    <MESSAGE value="can run the start menu commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="can run the start menu commands" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
