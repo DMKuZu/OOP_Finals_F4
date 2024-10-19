@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="can run the start menu commands">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Characters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Command_Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Command_Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Input_Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Input_Processor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/List_of_Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/List_of_Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Prompt_Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Prompt_Display.java" afterDir="false" />
-    </list>
+    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="Building Battle Sequence" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +166,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729081889566</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="can run the start menu commands">
+      <option name="closed" value="true" />
+      <created>1729351375830</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729351375830</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Building Battle Sequence">
+      <option name="closed" value="true" />
+      <created>1729351487022</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729351487022</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Building Battle Sequence">
+      <option name="closed" value="true" />
+      <created>1729351570191</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729351570191</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,7 +222,9 @@
     <MESSAGE value="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)" />
     <MESSAGE value="Merge pull request #5 from DMKuZu/DMKuZu&#10;&#10;Merge pull request #4 from DMKuZu/main" />
     <MESSAGE value="can run the start menu commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="can run the start menu commands" />
+    <MESSAGE value="Building Battle Sequence" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java&#10;#&#9;src/game/Input_Processor.java&#10;#&#9;src/game/List_of_Commands.java&#10;#&#9;src/game/Prompt_Display.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java&#10;#&#9;src/game/Input_Processor.java&#10;#&#9;src/game/List_of_Commands.java&#10;#&#9;src/game/Prompt_Display.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
