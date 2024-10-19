@@ -1,15 +1,29 @@
 package elements;
 
 public class Zipau extends Chosen_Hero{
-    private String name = "Zipau";
-    private int hp = 150;
-    private int mana = 150;
-    private int p_atk = 140;
-    private int p_def = 90;
-    private int m_atk = 60;
-    private int m_def = 100;
 
-    public Zipau(){
-        super("Zipau",150,150,140,90,60,100);
+    @Override
+    public int skill1(int enemy_p_def, int enemy_m_def) {
+        return 0;
+    }
+
+    @Override
+    public int skill2(int enemy_p_def, int enemy_m_def) {
+        return 0;
+    }
+
+    @Override
+    public int skill3(int enemy_p_def, int enemy_m_def) {
+        return 0;
+    }
+
+    @Override
+    public int skill4(int enemy_p_def, int enemy_m_def) {
+        return 0;
+    }
+
+    @Override
+    public int skill5(int enemy_p_def, int enemy_m_def) {
+        return 0;
     }
 }

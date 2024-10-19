@@ -1,16 +1,30 @@
 package elements;
 
 public class Mazupe extends Chosen_Hero{
-    private String name = "Mazupe";
-    private int hp = 150;
-    private int mana = 100;
-    private int p_atk = 165;
-    private int p_def = 180;
-    private int m_atk = 40;
-    private int m_def = 120;
 
-    public Mazupe(){
-        super("Mazupe",150,100,165,180,40,120);
+
+    @Override
+    public int skill1(int enemy_p_def, int enemy_m_def) {
+        return 0;
     }
 
+    @Override
+    public int skill2(int enemy_p_def, int enemy_m_def) {
+        return 0;
+    }
+
+    @Override
+    public int skill3(int enemy_p_def, int enemy_m_def) {
+        return 0;
+    }
+
+    @Override
+    public int skill4(int enemy_p_def, int enemy_m_def) {
+        return 0;
+    }
+
+    @Override
+    public int skill5(int enemy_p_def, int enemy_m_def) {
+        return 0;
+    }
 }

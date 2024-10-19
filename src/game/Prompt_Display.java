@@ -2,7 +2,6 @@ package game;
 
 public class Prompt_Display {
 
-
     public void nextPrompt(){                                                          ///creates gap for each prompts
         /*System.out.println("||");
         System.out.println("||");
@@ -25,6 +24,9 @@ public class Prompt_Display {
         System.out.println("\033[H\033[2J");
         System.out.println("\033[H\033[2J");
     }
+
+//Start menu prompt
+///////*****************************************************
 
     public void startMenu() {                                                          ///this is the start menu
         nextPrompt();
@@ -194,6 +196,8 @@ public class Prompt_Display {
         System.out.println("||--------------------------------------------------------------------------||");
     }
 
+//choose area prompt
+///////*****************************************************
     public void choose_area(){
         ///need paka magrandomizer then make different choose area scenarios base on what faction area you are at
         ///butang paka ug parameter such as int world
@@ -206,7 +210,9 @@ public class Prompt_Display {
         System.out.println("||");
     }
 
-    public void encounter_battle_choice(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA){
+//battle choice prompt
+///////*****************************************************
+    public void encounter_battle_choice(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA, String message){         ///this displays message above the choices
         nextPrompt();
         System.out.println("||--------------------------------------------------------------------------||");
         System.out.printf ("|| %s\n",enemy_name);
@@ -217,7 +223,7 @@ public class Prompt_Display {
         System.out.printf ("|| HP  : %d\n",hero_HP);
         System.out.printf ("|| MANA: %d\n",hero_MANA);
         System.out.println("||");
-        System.out.println("|| What do you want to do?");
+        System.out.printf ("|| %s\n", message);
         System.out.println("|| > Skills");
         System.out.println("|| > Potions");
         System.out.println("|| > Flee");
@@ -242,6 +248,21 @@ public class Prompt_Display {
         System.out.printf ("|| > 4. %s\n",skill4);
         System.out.printf ("|| > 5. %S\n",skill5);
         System.out.println("|| > Back");
+        System.out.println("||");
+    }
+
+    public void encounter_battle_attack(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA, String hero_msg, String enemy_msg){
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf ("|| %s\n",enemy_name);
+        System.out.printf ("|| HP: %d\n",enemy_HP);
+        System.out.printf ("|| %s\n", enemy_msg);
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero_name);
+        System.out.printf ("|| HP  : %d\n",hero_HP);
+        System.out.printf ("|| MANA: %d\n",hero_MANA);
+        System.out.printf ("|| %s\n", hero_msg);
         System.out.println("||");
     }
 
@@ -278,4 +299,8 @@ public class Prompt_Display {
         System.out.println("|| You have fled the battle!");
         System.out.println("||");
     }
+
+//skill choice prompt
+///////*****************************************************
+
 }

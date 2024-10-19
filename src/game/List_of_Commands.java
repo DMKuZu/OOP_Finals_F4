@@ -12,7 +12,7 @@ public interface List_of_Commands {
     List<String> potions_commands = Arrays.asList("1","2","3","back");
 
 
-    List<List<String>> master = Arrays.asList(exit,start_commands,characters,battle_commands,skills_commands,potions_commands);
+    List<List<String>> master = Arrays.asList(exit,start_commands,characters,battle_commands,skills_commands,potions_commands); //0,1,2,3,4,5,
 
     /* private volatile boolean skipDelay = false;
     private void introPrompt() {
