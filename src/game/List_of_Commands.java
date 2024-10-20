@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface List_of_Commands {
     List<String> exit = Arrays.asList("","exit");
-    List<String> start_commands = Arrays.asList("start", "atlas", "exit",/*"help",*/"credits","exit");
+    List<String> start_commands = Arrays.asList("start", "atlas", "exit",/*"help",*/"credits");
     List<String> characters = Arrays.asList("radea", "mazupe", "zipau","superidolsirkhai");
     List<String> battle_commands = Arrays.asList("skills","potions","flee");
     List<String> skills_commands = Arrays.asList("1","2","3","4","5","back");

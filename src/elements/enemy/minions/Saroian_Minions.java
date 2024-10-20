@@ -1,9 +1,10 @@
-package elements;
+package elements.enemy.minions;
 
 import java.util.Random;
-import calculate.Damage_Calculator;
+import calculate.Skill_Damage_Calculator;
+import elements.enemy.Current_Enemy;
 
-public class Saroian_Minions extends Current_Enemy implements Saroian_Minions_Stats,Saroian_Minions_Skills{
+public class Saroian_Minions extends Current_Enemy implements Saroian_Minions_Stats, Saroian_Minions_Skills {
     private String NAME;
     private int HP;
     private int P_ATK;
@@ -23,7 +24,7 @@ public class Saroian_Minions extends Current_Enemy implements Saroian_Minions_St
     private int DMG3_TYPE;   // 1 for p_atk , 0 for m_atk, -1 for no damage
     private int DMG3;
 
-    Damage_Calculator dmg_calc = new Damage_Calculator();
+    Skill_Damage_Calculator dmg_calc = new Skill_Damage_Calculator();
 
     public Saroian_Minions(){
         randomizeMinion();

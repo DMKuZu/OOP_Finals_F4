@@ -1,7 +1,7 @@
-package elements;
-import calculate.Damage_Calculator;
+package elements.hero;
+import calculate.Skill_Damage_Calculator;
 
-public class Radea extends Chosen_Hero{
+public class Radea extends Chosen_Hero {
     private final String NAME = "Radea";
     private final int HP = 150;
     private final int MANA = 200;
@@ -12,30 +12,30 @@ public class Radea extends Chosen_Hero{
 
     private String SKILL1_NAME = "Mind Shatter";
     private int DMG1_TYPE = 0;   // 1 for p_atk , 0 for m_atk, -1 for no damage
-    private int DMG1 = 74;
+    private int DMG1 = 30;
     private int MANA_COST1 = 45;
 
     private String SKILL2_NAME = "Psychic Drain";
     private int DMG2_TYPE = 0;   // 1 for p_atk , 0 for m_atk, -1 for no damage
-    private int DMG2 = 45;
+    private int DMG2 = 20;
     private int MANA_COST2 = 35;
 
     private String SKILL3_NAME = "Mental Fortress";
     private int DMG3_TYPE = 0;   // 1 for p_atk , 0 for m_atk, -1 for no damage
-    private int DMG3 = 20;
+    private int DMG3 = 25;
     private int MANA_COST3 = 40;
 
     private String SKILL4_NAME = "Thought Pierce";
     private int DMG4_TYPE = 0;   /// 1 for p_atk, 0 for m_atk, -1 for no damage
-    private int DMG4 = 60;
+    private int DMG4 = 35;
     private int MANA_COST4 = 50;
 
     private String SKILL5_NAME = "Mass Hysteria";
     private int DMG5_TYPE = 0;   /// 1 for p_atk, 0 for m_atk, -1 for no damage
-    private int DMG5 = 40;
+    private int DMG5 = 65;
     private int MANA_COST5 = 80;
 
-    Damage_Calculator dmg_calc = new Damage_Calculator();
+    Skill_Damage_Calculator dmg_calc = new Skill_Damage_Calculator();
 
     public Radea(){
         super.setNAME(NAME);

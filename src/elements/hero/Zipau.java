@@ -1,6 +1,6 @@
-package elements;
+package elements.hero;
 
-public class Zipau extends Chosen_Hero{
+public class Zipau extends Chosen_Hero {
 
     @Override
     public int skill1(int enemy_p_def, int enemy_m_def) {

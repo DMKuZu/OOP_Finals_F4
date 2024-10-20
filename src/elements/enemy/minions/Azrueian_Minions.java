@@ -1,7 +1,8 @@
-package elements;
+package elements.enemy.minions;
 
-public class Quaceron_Minions extends Current_Enemy{
+import elements.enemy.Current_Enemy;
 
+public class Azrueian_Minions extends Current_Enemy {
 
     @Override
     public int skill1(int hero_p_def, int hero_m_def) {

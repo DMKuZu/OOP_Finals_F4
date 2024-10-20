@@ -1,6 +1,5 @@
-package elements;
+package elements.enemy;
 
-import java.util.Random;
 
 public abstract class Current_Enemy {
     private String NAME;

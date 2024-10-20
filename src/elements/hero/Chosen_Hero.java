@@ -1,6 +1,6 @@
-package elements;
+package elements.hero;
 
-public abstract class Chosen_Hero {
+public class Chosen_Hero {
     private String NAME;
     private int HP;
     private int MANA;
@@ -255,10 +255,20 @@ public abstract class Chosen_Hero {
 
 
     // Skills - will return the damage values
-    public abstract int skill1(int enemy_p_def, int enemy_m_def);
-    public abstract int skill2(int enemy_p_def, int enemy_m_def);
-    public abstract int skill3(int enemy_p_def, int enemy_m_def);
-    public abstract int skill4(int enemy_p_def, int enemy_m_def);
-    public abstract int skill5(int enemy_p_def, int enemy_m_def);
+    public int skill1(int enemy_p_def, int enemy_m_def){
+        return 0;
+    }
+    public int skill2(int enemy_p_def, int enemy_m_def){
+        return 0;
+    }
+    public int skill3(int enemy_p_def, int enemy_m_def){
+        return 0;
+    }
+    public int skill4(int enemy_p_def, int enemy_m_def){
+        return 0;
+    }
+    public int skill5(int enemy_p_def, int enemy_m_def){
+        return 0;
+    }
 
 }

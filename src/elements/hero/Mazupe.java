@@ -1,6 +1,6 @@
-package elements;
+package elements.hero;
 
-public class Mazupe extends Chosen_Hero{
+public class Mazupe extends Chosen_Hero {
 
 
     @Override

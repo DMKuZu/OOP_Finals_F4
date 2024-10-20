@@ -1,4 +1,4 @@
-package elements;
+package elements.enemy.minions;
 
 import java.util.Random;
 
@@ -10,7 +10,7 @@ public interface Saroian_Minions_Skills {
     // 2 - debuff m_atk of hero
     // 3 - debuff p_def of hero
 
-///temporary pa ni tanan
+///temporary pa ni tanan kay i would rather put a gun to my head than do all of this shit by myself
 
     // v1 skills
     String v1_s1_skill_name = "Mind Spike";

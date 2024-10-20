@@ -1,4 +1,4 @@
-package elements;
+package elements.enemy.minions;
 
 public interface Saroian_Minions_Stats {
     String v1_name = "Psionic Goblin";

@@ -2,7 +2,7 @@ package calculate;
 
 import java.util.Random;
 
-public class Damage_Calculator {
+public class Skill_Damage_Calculator {
     private double damage;
 
     public int minion_calculate_damage(int base_dmg, int attack_stat, int defense_stat) {
@@ -10,7 +10,7 @@ public class Damage_Calculator {
         int hit_chance = rand.nextInt(100) + 1; // Random number from 1 to 100
 
         // Calculate normal damage
-        damage = Math.abs(base_dmg/30 * (attack_stat - defense_stat));
+        damage = Math.abs(base_dmg/30.0 * (attack_stat - defense_stat));
 
         // Apply hit type modifiers
         if (hit_chance <= 5) { // Miss
@@ -29,7 +29,7 @@ public class Damage_Calculator {
         int hit_chance = rand.nextInt(100) + 1; // Random number from 1 to 100
 
         // Calculate normal damage
-        damage = Math.abs(base_dmg/100 * (attack_stat - defense_stat));
+        damage = Math.abs(base_dmg/250.0 * (attack_stat - defense_stat));
 
         // Apply hit type modifiers
         if (hit_chance <= 5) { // Miss
