@@ -163,9 +163,9 @@ public class Prompt_Display {
         nextPrompt();
         System.out.println("||//////////////////////////////////////////////");
         System.out.println("|| John Winston W. Tabada");
-        System.out.println("|| Aaron Rey Jacalan");
-        System.out.println("|| Jairus Espina");
-        System.out.println("|| Lovely Shane Ong");
+        System.out.println("|| Aaron Rey A. Jacalan");
+        System.out.println("|| Ruhmer Jairus R. Espina");
+        System.out.println("|| Lovely Shane P. Ong");
         System.out.println("||");
     }
 
