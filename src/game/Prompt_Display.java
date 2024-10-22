@@ -2,40 +2,23 @@ package game;
 
 public class Prompt_Display {
 
-    public void nextPrompt(){                                                          ///creates gap for each prompts
-        /*System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");*/
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
-        System.out.println("\033[H\033[2J");
+    public void nextPrompt(){        ///creates gap for each prompts
+        for(int i = 0; i < 10; i++){
+            System.out.println("\033[H\033[2J");
+            System.out.flush();
+        }
     }
 
 //Start menu prompt
 ///////*****************************************************
 
-    public void startMenu() {                                                          ///this is the start menu
+    public void startMenu() {             ///this is the start menu
         nextPrompt();
         System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| The Entity");
         System.out.println("||");
         System.out.println("|| > Start");
         System.out.println("|| > Atlas");
-//        System.out.println("|| > Help");
         System.out.println("|| > Credits");
         System.out.println("|| > Exit");
         System.out.println("||");
@@ -155,28 +138,6 @@ public class Prompt_Display {
         System.out.println("||   collected.");
         System.out.println("||");
     }
-
-    /*public void help() {
-        nextPrompt();
-        System.out.println("||//////////////////////////////////////////");
-        System.out.println("|| # List of Commands");
-        System.out.println("||   @ Start menu");
-        System.out.println("||      - start");
-        System.out.println("||      - atlas");
-        System.out.println("||      - help");
-        System.out.println("||      - credits");
-        System.out.println("||      - exit");
-        System.out.println("||");
-        System.out.println("||   @ Choose characters");
-        System.out.println("||      - radea");
-        System.out.println("||      - mazupe");
-        System.out.println("||      - zipau");
-        System.out.println("||");
-        System.out.println("||   @ Exit from help, atlas, credits");
-        System.out.println("||      - just press ENTER");
-        System.out.println("||      - exit");
-        System.out.println("||");
-    }*/
 
     public void credits() {
         nextPrompt();
@@ -305,7 +266,7 @@ public class Prompt_Display {
         System.out.println("||");
     }
 
-    public void encounter_battle_potions(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA,String pot1, String pot2, String pot3, String effect1, String effect2, String effect3,String stat1, String stat2, String stat3) {
+    public void encounter_battle_potions(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA,String pot1, String pot2, String pot3) {
         nextPrompt();
         System.out.println("||--------------------------------------------------------------------------||");
         System.out.printf("|| %s\n", enemy_name);
@@ -317,9 +278,9 @@ public class Prompt_Display {
         System.out.printf("|| MANA: %d\n", hero_MANA);
         System.out.println("||");
         System.out.println("|| Choose the number of the pot you want!");
-        System.out.printf("|| > 1. %s = +%s to %s\n", pot1, effect1, stat1);
-        System.out.printf("|| > 2. %s = +%s to %s\n", pot2, effect2, stat2);
-        System.out.printf("|| > 3. %s = +%s to %s\n", pot3, effect3, stat3);
+        System.out.printf("|| > 1. %s\n", pot1);
+        System.out.printf("|| > 2. %s\n", pot2);
+        System.out.printf("|| > 3. %s\n", pot3);
         System.out.println("|| > Back");
         System.out.println("||");
     }

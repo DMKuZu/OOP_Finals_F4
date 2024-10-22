@@ -38,6 +38,9 @@ public class Radea extends Chosen_Hero {
     Skill_Damage_Calculator dmg_calc = new Skill_Damage_Calculator();
 
     public Radea(){
+        super.setCheck_HP(HP);
+        super.setCheck_MANA(MANA);
+
         super.setNAME(NAME);
         super.setHP(HP);
         super.setMANA(MANA);

@@ -29,7 +29,7 @@ public class Skill_Damage_Calculator {
         int hit_chance = rand.nextInt(100) + 1; // Random number from 1 to 100
 
         // Calculate normal damage
-        damage = Math.abs(base_dmg/250.0 * (attack_stat - defense_stat));
+        damage = Math.abs(base_dmg/250.0 * (attack_stat - defense_stat))*0;  //zero damage
 
         // Apply hit type modifiers
         if (hit_chance <= 5) { // Miss

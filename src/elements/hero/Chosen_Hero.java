@@ -4,6 +4,8 @@ public class Chosen_Hero {
     private String NAME;
     private int HP;
     private int MANA;
+    private int check_HP;
+    private int check_MANA;
     private int P_ATK;
     private int P_DEF;
     private int M_ATK;
@@ -33,6 +35,22 @@ public class Chosen_Hero {
     private int DMG5_TYPE;   /// 1 for p_atk, 0 for m_atk, -1 for no damage
     private int DMG5;
     private int MANA_COST5;
+
+    // final values
+    public int getCheck_HP(){
+        return check_HP;
+    }
+    public int getCheck_MANA(){
+        return check_MANA;
+    }
+    public void setCheck_HP(int check_HP){
+        this.check_HP = check_HP;
+    }
+    public void setCheck_MANA(int check_MANA){
+        this.check_MANA = check_MANA;
+    }
+
+
 
     // Getters
     public String getNAME() {

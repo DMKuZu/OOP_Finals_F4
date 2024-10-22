@@ -30,8 +30,8 @@ public class Potions_Inventory extends Chosen_Hero implements Potion_Stats{
         return potList.size() >= MAX_CAP;
     }
 
-    public Pots get_pot(int listIndex){
-        return potList.get(listIndex-1);
+    public Pots get_pot(int listPos){
+        return potList.get(listPos -1);
     }
 
     public String add_pot(Pots newPot){
@@ -44,24 +44,29 @@ public class Potions_Inventory extends Chosen_Hero implements Potion_Stats{
         }
     }
 
-    public String swap_pot(Pots newPot,int listIndex){
-        Pots oldPot = get_pot(listIndex);
-        potList.set(listIndex-1,newPot);
+    public String swap_pot(Pots newPot,int listPos){
+        Pots oldPot = get_pot(listPos);
+        potList.set(listPos -1,newPot);
         return "Swapped " + oldPot.getNAME() + " with " + newPot.getNAME();
     }
 
-    public int use_pot(int listIndex,int stat){    //it returns the new stat TO set the new stat
-        Pots usedPot = get_pot(listIndex);
-        potList.set(listIndex-1,new Pots());
-        int buff = 0;
+    public int use_pot(int listPos, int stat){    //it returns the new stat TO set the new stat
+        Pots usedPot = get_pot(listPos);
+        potList.remove(listPos -1);
+        add_pot(new Pots());
+
+        int buff;
         String effect = usedPot.getEffect();
 
-        if(usedPot.getEffect().contains("%")){  //checks if it is a multiplier effect potion
+        if(usedPot.getEffect().contains("%")){      //checks if it is a multiplier effect potion
             effect = effect.replace("%", "");
             double multiplier = Double.parseDouble(effect);
             buff = calc.calculate_hero_buff(multiplier,stat);
         }
-        else{
+        else if(usedPot.getEffect().contains("<None>")){   //<none> ang value, just a placeholder
+            buff = -1;
+        }
+        else{                                        //checks if its an addend effect potion
             int addend = Integer.parseInt(usedPot.getEffect());
             buff = calc.calculate_hero_buff(addend,stat);
         }

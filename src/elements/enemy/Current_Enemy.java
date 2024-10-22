@@ -1,7 +1,7 @@
 package elements.enemy;
 
 
-public abstract class Current_Enemy {
+public class Current_Enemy {
     private String NAME;
     private int HP;
     private int P_ATK;
@@ -145,8 +145,14 @@ public abstract class Current_Enemy {
 
     //Skills - weill return the damage values
 
-    public abstract int skill1(int hero_p_def, int hero_m_def);
-    public abstract int skill2(int hero_p_def, int hero_m_def);
-    public abstract int skill3(int hero_p_def, int hero_m_def);
+    public  int skill1(int hero_p_def, int hero_m_def){
+        return 0;
+    }
+    public  int skill2(int hero_p_def, int hero_m_def){
+        return 0;
+    }
+    public  int skill3(int hero_p_def, int hero_m_def){
+        return 0;
+    }
 
 }

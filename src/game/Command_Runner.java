@@ -16,14 +16,16 @@ public class Command_Runner implements List_of_Commands{
     private Prompt_Display prompt = new Prompt_Display();
     private int cmdIndex = -1;                                      ////mao ning index para sa list sa sulod sa master List
     private Chosen_Hero hero;
-    private Current_Enemy enemy;///temporary, you need to make the choose area
+    private int max_hero_hp;
+    private int max_hero_mana;
+    private Current_Enemy enemy;
     private Potions_Inventory pots;
     private Boolean current_status = false;
     private int status_effect_counter;
 
 
     public void startMenu(){
-        enemy = new Saroian_Minions();
+        enemy = new Saroian_Minions(); ///temporary, you need to make the choose area
         pots = new Potions_Inventory();
         prompt.startMenu();
         cmdIndex = input.getInput(1);
@@ -52,9 +54,6 @@ public class Command_Runner implements List_of_Commands{
                 case "atlas":
                     atlas();
                     break;
-                /*case "help":
-                    help();
-                    break;*/
                 case "credits":
                     credits();
                     break;
@@ -68,14 +67,20 @@ public class Command_Runner implements List_of_Commands{
             switch(cmd){
                 case "radea":
                     hero = new Radea();
+                    max_hero_hp = hero.getCheck_HP();
+                    max_hero_mana = hero.getCheck_MANA();
                     battle();
                     break;
                 case "mazupe":
                     hero = new Mazupe();
+                    max_hero_hp = hero.getCheck_HP();
+                    max_hero_mana = hero.getCheck_MANA();
                     battle();
                     break;
                 case "zipau":
                     hero = new Zipau();
+                    max_hero_hp = hero.getCheck_HP();
+                    max_hero_mana = hero.getCheck_MANA();
                     battle();
                     break;
             }
@@ -139,9 +144,8 @@ public class Command_Runner implements List_of_Commands{
         prompt.introPrompt();
         cmdIndex = input.getInput(2);
 
-        if(cmdIndex != -1){ /// goes to character selection
-            callCommand(2);
-        }
+         /// goes to character selection
+        callCommand(2);
 
     }
 
@@ -149,27 +153,18 @@ public class Command_Runner implements List_of_Commands{
         prompt.atlas();
         cmdIndex = input.getInput(0);
 
-        if(cmdIndex != -1){ /// goes back to start menu
-            startMenu();
-        }
+        /// goes back to start menu
+        startMenu();
+
     }
-
-    /*private void help(){                    ///figure out a way to be able to call help() in any part of the game and go back to the previous function call
-        prompt.help();
-        cmdIndex = input.getInput(2);
-
-        if(cmdIndex != -1){ //just to make sure that i am not accessing incorrectly
-            startMenu();
-        }
-    }*/
 
     private void credits(){
         prompt.credits();
         cmdIndex = input.getInput(0);
 
-        if(cmdIndex != -1){ /// goes back to start menu
-            startMenu();
-        }
+        /// goes back to start menu
+        startMenu();
+
     }
 
     private void exit(){ /// should end the game
@@ -194,9 +189,9 @@ public class Command_Runner implements List_of_Commands{
         prompt.encounter_battle_choice(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana);
         cmdIndex = input.getInput(3);
 
-        if(cmdIndex != -1){ /// chooses what to do in the battle
-            callCommand(3);
-        }
+        /// chooses what to do in the battle
+        callCommand(3);
+
     }
 
     private void skills(){
@@ -219,9 +214,9 @@ public class Command_Runner implements List_of_Commands{
         prompt.encounter_battle_skills(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana,skill1_name,skill2_name,skill3_name,skill4_name,skill5_name,cost1,cost2,cost3,cost4,cost5);
         cmdIndex = input.getInput(4);
 
-        if(cmdIndex != -1){ /// goes to choose skills
-            callCommand(4);
-        }
+        /// goes to choose skills
+        callCommand(4);
+
     }
 
     private void potions(){
@@ -243,15 +238,17 @@ public class Command_Runner implements List_of_Commands{
         String pot3_effect = pots.get_pot(3).getEffect();
         String pot3_stat = pots.get_pot(3).getStat_to_be_affected();
 
+        String pot1,pot2,pot3;
+        pot1 = pot1_name.equals("<None>") ? "<none>" : pot1_name + " = " + "+" + pot1_effect + " to hero's " + pot1_stat;
+        pot2 = pot2_name.equals("<None>") ? "<none>" : pot2_name + " = " + "+" + pot2_effect + " to hero's " + pot2_stat;
+        pot3 = pot3_name.equals("<None>") ? "<none>" : pot3_name + " = " + "+" + pot3_effect + " to hero's " + pot3_stat;
 
-        prompt.encounter_battle_potions(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana,
-                pot1_name,pot2_name,pot3_name,pot1_effect,pot2_effect,pot3_effect,pot1_stat,
-                pot2_stat,pot3_stat);
+        prompt.encounter_battle_potions(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana,pot1,pot2,pot3);
         cmdIndex = input.getInput(5);
 
-        if(cmdIndex != -1){ /// goes to choose potions
-            callCommand(5);
-        }
+        /// goes to choose potions
+        callCommand(5);
+
 
     }
 
@@ -265,10 +262,9 @@ public class Command_Runner implements List_of_Commands{
         prompt.encounter_battle_flee(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana);
         cmdIndex = input.getInput(0);
 
-        if(cmdIndex != -1){ /// just shows a prompt and should go to choose menu
-            ///create a choose menu method
-            startMenu();
-        }
+        /// just shows a prompt and should go to choose menu
+        //create a choose menu method
+        startMenu();
     }
 
 //hero vs enemy Skill  sequence commands
@@ -281,7 +277,7 @@ public class Command_Runner implements List_of_Commands{
         int hero_mana = hero.getMANA();
         String hero_msg = "",enemy_msg = "";
 
-        ///for now ang hero jud maguna
+        //for now ang hero jud maguna
         switch(skill_choice){
             case 1:
                 hero_msg = hero_skill1();
@@ -300,21 +296,21 @@ public class Command_Runner implements List_of_Commands{
                 break;
         }
 
-        ///ako gi if else para sure jud ko na di mubalik sa method, its just making sure nothing gets called like last time
+        //this is where the sequence of attacks would be checked
         prompt.encounter_battle_hero_action(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana,hero_msg);
         cmdIndex = input.getInput(0);
-        if(hero_msg.contains(("Not"))){
+        if(hero_msg.contains(("Not"))){  //this prompts the user that they have no mana
             skills();
         }
         else {
-            enemy_hp = enemy.getHP();  //reset values
+            enemy_hp = enemy.getHP();  //reset values para sa display
             hero_mana = hero.getMANA();
 
 
-            if(enemy_hp <= 0){
+            if(enemy_hp <= 0){ //checks if namatay ang kalaban
                 prompt.encounter_battle_victory(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana);
                 cmdIndex = input.getInput(0);
-                startMenu();
+                startMenu();  //change this to reward prompt
             }
             else {
                 enemy_msg = enemy_skill_chooser();
@@ -322,11 +318,12 @@ public class Command_Runner implements List_of_Commands{
                 cmdIndex = input.getInput(0);
                 hero_hp = hero.getHP();
 
-                if (hero_hp <= 0) {
+                if (hero_hp <= 0) {  //checks if namatay ka
                     prompt.encounter_battle_defeat(enemy_name, enemy_hp, hero_name, hero_hp, hero_mana);
                     cmdIndex = input.getInput(0);
-                    startMenu();
-                } else {
+                    startMenu(); //change this to you lose prompt
+                }
+                else {  //way namatay ug continue battle
                     battle();
                 }
             }
@@ -342,7 +339,7 @@ public class Command_Runner implements List_of_Commands{
         int hero_m_def = hero.getM_DEF();
         int damage;
 
-        switch(choice){
+        switch(choice){   //mudisplay rani sa unsay gigamit na attack sa enemy
             case 1:
                 damage = enemy.skill1(hero_p_def,hero_m_def);
                 hero_hp = Math.max(hero_hp - damage, 0);
@@ -479,7 +476,7 @@ public class Command_Runner implements List_of_Commands{
 
 //potion commands
 //************************************************************************************************************************************************************************************************
-    private void use_pot(int potIndex){
+    private void use_pot(int potPos){
         String enemy_name = enemy.getNAME();
         int enemy_hp = enemy.getHP();
         String hero_name = hero.getNAME();
@@ -489,8 +486,8 @@ public class Command_Runner implements List_of_Commands{
         int hero_m_atk = hero.getM_ATK();
         int hero_p_def = hero.getP_DEF();
         int hero_m_def = hero.getM_DEF();
-        String stat_to_affect = pots.get_pot(potIndex).getStat_to_be_affected();
-        int stat = 0;
+        String stat_to_affect = pots.get_pot(potPos).getStat_to_be_affected();
+        int stat;
         switch (stat_to_affect){ //set up the value of the stat to buff
             case "HP":
                 stat = hero_hp;
@@ -510,21 +507,41 @@ public class Command_Runner implements List_of_Commands{
             case "M_DEF":
                 stat = hero_m_def;
                 break;
+            default:
+                stat = 0;
         }
 
-        String hero_msg = "Used " + pots.get_pot(potIndex).getNAME();
-        int buff_stat = pots.use_pot(potIndex,stat);
+        String hero_msg;
+        if(pots.get_pot(potPos).getNAME().equals("<None>")){ //prompts the user na walay potion
+            hero_msg = "No potion to use";
+        }
+        else {
+            hero_msg = "Used " + pots.get_pot(potPos).getNAME() + ".";
+        }
 
+        if(hero_hp == max_hero_hp && stat_to_affect.equals("HP")){
+            hero_msg = "HP is full.";
+            prompt.encounter_battle_hero_action(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana,hero_msg);
+            cmdIndex = input.getInput(0);
+            potions();
+        }
+        if(hero_mana == max_hero_mana && stat_to_affect.equals("MANA")){
+            hero_msg = "MANA is full.";
+            prompt.encounter_battle_hero_action(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana,hero_msg);
+            cmdIndex = input.getInput(0);
+            potions();
+        }
+        int buff_stat = pots.use_pot(potPos,stat);
 
-        //kung maguse ug potion it is stiil your turn so bawia by dakoa ang stat sa enemy person of
+        //kung maguse ug potion it is still your turn so bawia by dakoa ang stat sa enemy
         prompt.encounter_battle_hero_action(enemy_name,enemy_hp,hero_name,hero_hp,hero_mana,hero_msg);
         cmdIndex = input.getInput(0);
         switch (stat_to_affect){ //buff the stat
             case "HP":
-                hero.setHP(buff_stat);
+                hero.setHP(Math.min(buff_stat,max_hero_hp));
                 break;
             case "MANA":
-                hero.setMANA(buff_stat);
+                hero.setMANA(Math.min(buff_stat,max_hero_mana));
                 break;
             case "P_ATK":
                 hero.setP_ATK(buff_stat);
@@ -543,7 +560,5 @@ public class Command_Runner implements List_of_Commands{
         //since buff to hero paman ang mabuhat, back to potions lang sa una
         potions();
     }
-
-
 
 }

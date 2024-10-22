@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="HP still won't change">
+    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="Gotta throw exceptions in use_pot in pot_inv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calculate/Damage_Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Azrueian_Minions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/minions/Azrueian_Minions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Chosen_Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Current_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Mazupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Mazupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Quaceron_Minions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/minions/Quaceron_Minions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Radea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Radea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Saroian_Minions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/minions/Saroian_Minions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Saroian_Minions_Skills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/minions/Saroian_Minions_Skills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Saroian_Minions_Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/minions/Saroian_Minions_Stats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Zipau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Zipau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/Radea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Radea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/potion/Potions_Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/potion/Potions_Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Command_Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Command_Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/List_of_Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/List_of_Commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Prompt_Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Prompt_Display.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +223,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729414299780</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="gotta throw exceptions for potion">
+      <option name="closed" value="true" />
+      <created>1729591839140</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729591839140</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Gotta throw exceptions in use_pot in pot_inv">
+      <option name="closed" value="true" />
+      <created>1729592011799</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729592011799</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,7 +275,10 @@
     <MESSAGE value="Building Battle Sequence" />
     <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java&#10;#&#9;src/game/List_of_Commands.java" />
     <MESSAGE value="HP still won't change" />
-    <option name="LAST_COMMIT_MESSAGE" value="HP still won't change" />
+    <MESSAGE value="gotta throw exceptions for potion" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java" />
+    <MESSAGE value="Gotta throw exceptions in use_pot in pot_inv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gotta throw exceptions in use_pot in pot_inv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
