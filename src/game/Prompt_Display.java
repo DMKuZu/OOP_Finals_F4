@@ -224,7 +224,6 @@ public class Prompt_Display {
         System.out.printf ("|| MANA: %d\n",hero_MANA);
         System.out.println("||");
         System.out.printf ("|| %s\n", hero_msg);
-        System.out.println("||");
     }
 
     public void encounter_battle_enemy_attack(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA, String enemy_msg){
