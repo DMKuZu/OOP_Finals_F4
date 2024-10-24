@@ -1,29 +1,19 @@
 package elements.hero;
 
-public class Zipau extends Chosen_Hero {
+import elements.value.Skills;
+import elements.value.Stats;
 
-    @Override
-    public int skill1(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
+import java.util.Arrays;
+import java.util.List;
 
-    @Override
-    public int skill2(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
-
-    @Override
-    public int skill3(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
-
-    @Override
-    public int skill4(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
-
-    @Override
-    public int skill5(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
+public interface Zipau  {
+    String name = "Zipau";
+    Stats stats = new Stats(100,30,15,0.4,0.12);
+    List<Skills> skills = Arrays.asList(
+            new Skills("Quick Slash",10,1),
+            new Skills("Flash Strike",15,15),
+            new Skills("Wind Walker",0,8),
+            new Skills("Bright Blade",20,6),
+            new Skills("Blade Dance",35,3)
+    );
 }

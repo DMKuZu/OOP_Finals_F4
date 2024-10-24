@@ -1,30 +1,19 @@
 package elements.hero;
 
-public class Mazupe extends Chosen_Hero {
+import elements.value.Skills;
+import elements.value.Stats;
 
+import java.util.Arrays;
+import java.util.List;
 
-    @Override
-    public int skill1(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
-
-    @Override
-    public int skill2(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
-
-    @Override
-    public int skill3(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
-
-    @Override
-    public int skill4(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
-
-    @Override
-    public int skill5(int enemy_p_def, int enemy_m_def) {
-        return 0;
-    }
+public interface Mazupe {
+    String name = "Mazupe";
+    Stats stats = new Stats(200,20,30,0.2,0.6);
+    List<Skills> skills = Arrays.asList(
+            new Skills("Basic Strike",10,1),
+            new Skills("Mountain Breaker",20,10),
+            new Skills("War Cry",0,8),
+            new Skills("Stone SKin",0,8),
+            new Skills("Titan's Grip",30,5)
+    );
 }
