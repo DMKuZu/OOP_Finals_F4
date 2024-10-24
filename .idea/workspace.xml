@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="Gotta throw exceptions in use_pot in pot_inv">
+    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="Beta test na essentially">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/hero/Radea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Radea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/potion/Potions_Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/potion/Potions_Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Command_Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Command_Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP_Finals_F4/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP_Finals_F4/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game_Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game_Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Input_Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Input_Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/List_of_Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/List_of_Commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Prompt_Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Prompt_Display.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,31 +71,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;DMKuZu&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/kuzu/IdeaProjects/OOP_Finals_F4&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "DMKuZu",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/kuzu/IdeaProjects/OOP_Finals_F4",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OOP_Finals_F4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.Prompt_Display" />
-          <option name="ENABLED" value="true" />
+          <option name="ENABLED" value="false" />
         </pattern>
       </extension>
       <method v="2">
@@ -239,7 +237,47 @@
       <option name="project" value="LOCAL" />
       <updated>1729592011799</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Reward system then choose area">
+      <option name="closed" value="true" />
+      <created>1729775988033</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729775988033</updated>
+    </task>
+    <task id="LOCAL-00017" summary="need pa reward system">
+      <option name="closed" value="true" />
+      <created>1729776018001</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729776018001</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Beta test na essentially">
+      <option name="closed" value="true" />
+      <created>1731337980818</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1731337980818</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Beta test na essentially">
+      <option name="closed" value="true" />
+      <created>1731338054791</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1731338054791</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Beta test na essentially">
+      <option name="closed" value="true" />
+      <created>1731338073654</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1731338073654</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,9 +314,12 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java&#10;#&#9;src/game/List_of_Commands.java" />
     <MESSAGE value="HP still won't change" />
     <MESSAGE value="gotta throw exceptions for potion" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java" />
     <MESSAGE value="Gotta throw exceptions in use_pot in pot_inv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gotta throw exceptions in use_pot in pot_inv" />
+    <MESSAGE value="Reward system then choose area" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java" />
+    <MESSAGE value="need pa reward system" />
+    <MESSAGE value="Beta test na essentially" />
+    <option name="LAST_COMMIT_MESSAGE" value="Beta test na essentially" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,5 +333,8 @@
         <breakpoint enabled="true" type="java-exception" />
       </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OOP_Finals_F4$Main.ic" NAME="Main Coverage Results" MODIFIED="1731417930646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
