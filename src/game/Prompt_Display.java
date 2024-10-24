@@ -2,22 +2,23 @@ package game;
 
 public class Prompt_Display {
 
-
-    public void nextPrompt(){                                                          ///creates gap for each prompts
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
-        System.out.println("||");
+    public void nextPrompt(){        ///creates gap for each prompts
+        for(int i = 0; i < 10; i++){
+            System.out.println("\033[H\033[2J");
+            System.out.flush();
+        }
     }
 
-    public void startMenu() {                                                          ///this is the start menu
+//Start menu prompt
+///////*****************************************************
+
+    public void startMenu() {             ///this is the start menu
         nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| The Entity");
         System.out.println("||");
         System.out.println("|| > Start");
         System.out.println("|| > Atlas");
-//        System.out.println("|| > Help");
         System.out.println("|| > Credits");
         System.out.println("|| > Exit");
         System.out.println("||");
@@ -26,6 +27,7 @@ public class Prompt_Display {
 
     public void introPrompt() {
         nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| Since the beginning of time, the land of Erotoma was created");
         System.out.println("|| by the grace of The Beings. The Beings created a land full of");
         System.out.println("|| diversity. Creatures were created in the likeness of The Beings.");
@@ -71,6 +73,7 @@ public class Prompt_Display {
 
     public void atlas() {
         nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| The Entity   \t- Antagonist");
         System.out.println("|| The Beings\t\t- Hero's source of power");
         System.out.println("|| Erotoma\t\t- World name");
@@ -136,43 +139,171 @@ public class Prompt_Display {
         System.out.println("||");
     }
 
-    /*public void help() {
-        nextPrompt();
-        System.out.println("||//////////////////////////////////////////");
-        System.out.println("|| # List of Commands");
-        System.out.println("||   @ Start menu");
-        System.out.println("||      - start");
-        System.out.println("||      - atlas");
-        System.out.println("||      - help");
-        System.out.println("||      - credits");
-        System.out.println("||      - exit");
-        System.out.println("||");
-        System.out.println("||   @ Choose characters");
-        System.out.println("||      - radea");
-        System.out.println("||      - mazupe");
-        System.out.println("||      - zipau");
-        System.out.println("||");
-        System.out.println("||   @ Exit from help, atlas, credits");
-        System.out.println("||      - just press ENTER");
-        System.out.println("||      - exit");
-        System.out.println("||");
-    }*/
-
-
     public void credits() {
         nextPrompt();
-        System.out.println("||//////////////////////////////////////////////");
+        System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| John Winston W. Tabada");
         System.out.println("|| Aaron Rey A. Jacalan");
-        System.out.println("|| Ruhmer Jairus R. Espina");
-        System.out.println("|| Lovely Shane P. Ong");
+        System.out.println("|| Ruhmer Jairus Espina");
+        System.out.println("|| Lovely Shane Ong");
         System.out.println("||");
     }
-
 
     public void exit() {
         nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| Exiting...");
         System.out.println("|| Thank you for playing The Entity!");
+        System.out.println("||--------------------------------------------------------------------------||");
     }
+
+//choose area prompt
+///////*****************************************************
+    public void choose_area(){
+        ///need paka magrandomizer then make different choose area scenarios base on what faction area you are at
+        ///butang paka ug parameter such as int world
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.println("|| choose the path you shall take to proceed ");
+        System.out.println("|| > left");
+        System.out.println("|| > middle");
+        System.out.println("|| > right");
+        System.out.println("||");
+    }
+
+//battle choice prompt
+///////*****************************************************
+    public void encounter_battle_choice(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA){         ///this displays message above the choices
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf ("|| %s\n",enemy_name);
+        System.out.printf ("|| HP: %d\n",enemy_HP);
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero_name);
+        System.out.printf ("|| HP  : %d\n",hero_HP);
+        System.out.printf ("|| MANA: %d\n",hero_MANA);
+        System.out.println("||");
+        System.out.println("|| What do you want to do?");
+        System.out.println("|| > Skills");
+        System.out.println("|| > Potions");
+        System.out.println("|| > Flee");
+        System.out.println("||");
+    }
+
+    public void encounter_battle_skills(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA,String skill1, String skill2, String skill3, String skill4, String skill5,int cost1,int cost2, int cost3 , int cost4, int cost5){
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf ("|| %s\n",enemy_name);
+        System.out.printf ("|| HP: %d\n",enemy_HP);
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero_name);
+        System.out.printf ("|| HP  : %d\n",hero_HP);
+        System.out.printf ("|| MANA: %d\n",hero_MANA);
+        System.out.println("||");
+        System.out.println("|| Choose the number of the skill you want!");
+        System.out.printf ("|| > 1. %s = %d mana cost\n",skill1,cost1);
+        System.out.printf ("|| > 2. %s = %d mana cost\n",skill2,cost2);
+        System.out.printf ("|| > 3. %s = %d mana cost\n",skill3,cost3);
+        System.out.printf ("|| > 4. %s = %d mana cost\n",skill4,cost4);
+        System.out.printf ("|| > 5. %S = %d mana cost\n",skill5,cost5);
+        System.out.println("|| > Back");
+        System.out.println("||");
+    }
+
+    public void encounter_battle_hero_action(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA, String hero_msg){
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf ("|| %s\n",enemy_name);
+        System.out.printf ("|| HP: %d\n",enemy_HP);
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero_name);
+        System.out.printf ("|| HP  : %d\n",hero_HP);
+        System.out.printf ("|| MANA: %d\n",hero_MANA);
+        System.out.println("||");
+        System.out.printf ("|| %s\n", hero_msg);
+    }
+
+    public void encounter_battle_enemy_attack(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA, String enemy_msg){
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf ("|| %s\n",enemy_name);
+        System.out.printf ("|| HP: %d\n",enemy_HP);
+        System.out.println("||");
+        System.out.printf ("|| %s\n", enemy_msg);
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero_name);
+        System.out.printf ("|| HP  : %d\n",hero_HP);
+        System.out.printf ("|| MANA: %d\n",hero_MANA);
+        System.out.println("||");
+    }
+
+    public void encounter_battle_victory(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA){
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero_name);
+        System.out.printf ("|| HP  : %d\n",hero_HP);
+        System.out.printf ("|| MANA: %d\n",hero_MANA);
+        System.out.println("||");
+        System.out.println("|| You have defeated " + enemy_name + ".");
+        System.out.println("||");
+    }
+
+    public void encounter_battle_defeat(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA){
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf ("|| %s\n",enemy_name);
+        System.out.printf ("|| HP: %d\n",enemy_HP);
+        System.out.println("||");
+        System.out.println("||");
+        System.out.println("|| You have been defeated by " + enemy_name + ".");
+        System.out.println("||");
+    }
+
+    public void encounter_battle_potions(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA,String pot1, String pot2, String pot3) {
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf("|| %s\n", enemy_name);
+        System.out.printf("|| HP: %d\n", enemy_HP);
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf("|| %s\n", hero_name);
+        System.out.printf("|| HP  : %d\n", hero_HP);
+        System.out.printf("|| MANA: %d\n", hero_MANA);
+        System.out.println("||");
+        System.out.println("|| Choose the number of the pot you want!");
+        System.out.printf("|| > 1. %s\n", pot1);
+        System.out.printf("|| > 2. %s\n", pot2);
+        System.out.printf("|| > 3. %s\n", pot3);
+        System.out.println("|| > Back");
+        System.out.println("||");
+    }
+
+    //// should create prompt where you add potions or swap out potions
+
+
+
+    public void encounter_battle_flee(String enemy_name, int enemy_HP, String hero_name, int hero_HP, int hero_MANA){
+        nextPrompt();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf ("|| %s\n",enemy_name);
+        System.out.printf ("|| HP: %d\n",enemy_HP);
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero_name);
+        System.out.printf ("|| HP  : %d\n",hero_HP);
+        System.out.printf ("|| MANA: %d\n",hero_MANA);
+        System.out.println("||");
+        System.out.println("|| You have fled the battle!");
+        System.out.println("||");
+    }
+
+//skill choice prompt
+///////*****************************************************
+
 }

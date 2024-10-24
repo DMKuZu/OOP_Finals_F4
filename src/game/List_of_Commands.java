@@ -4,11 +4,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public interface List_of_Commands {
-    List<String> start_commands = Arrays.asList("start", "atlas", "exit",/*"help",*/"credits","exit");
-    List<String> characters = Arrays.asList("radea", "mazupe", "zipau","superidolsirkhai");
     List<String> exit = Arrays.asList("","exit");
+    List<String> start_commands = Arrays.asList("start", "atlas", "exit",/*"help",*/"credits");
+    List<String> characters = Arrays.asList("radea", "mazupe", "zipau","superidolsirkhai");
+    List<String> battle_commands = Arrays.asList("skills","potions","flee");
+    List<String> skills_commands = Arrays.asList("1","2","3","4","5","back");
+    List<String> potions_commands = Arrays.asList("1","2","3","back");
 
-    List<List<String>> master = Arrays.asList(start_commands,characters,exit);
+
+    List<List<String>> master = Arrays.asList(exit,start_commands,characters,battle_commands,skills_commands,potions_commands); //0,1,2,3,4,5,
 
     /* private volatile boolean skipDelay = false;
     private void introPrompt() {
