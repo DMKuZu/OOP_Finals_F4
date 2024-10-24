@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)">
-      <change afterPath="$PROJECT_DIR$/src/game/Prompt_Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="Gotta throw exceptions in use_pot in pot_inv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/OOP_Finals_Descriptions" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/OOP_Finals_Descriptions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Input_Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Input_Processor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Prompt_Caller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/Radea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Radea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/potion/Potions_Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/potion/Potions_Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Command_Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Command_Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Prompt_Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Prompt_Display.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +31,17 @@
     <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/DMKuZu" />
+    <option name="NEW_BASE" value="main" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="DMKuZu &lt;127173186+dmkuzu@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,6 +58,9 @@
     &quot;accountId&quot;: &quot;72cd583b-8663-4616-a952-b0cd81a54fd0&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -72,7 +81,7 @@
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;DMKuZu&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/kuzu/IdeaProjects/OOP_Finals_F4&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -158,7 +167,79 @@
       <option name="project" value="LOCAL" />
       <updated>1727877488061</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="can run the start menu commands">
+      <option name="closed" value="true" />
+      <created>1729081889566</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729081889566</updated>
+    </task>
+    <task id="LOCAL-00008" summary="can run the start menu commands">
+      <option name="closed" value="true" />
+      <created>1729351375830</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729351375830</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Building Battle Sequence">
+      <option name="closed" value="true" />
+      <created>1729351487022</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729351487022</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Building Battle Sequence">
+      <option name="closed" value="true" />
+      <created>1729351570191</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729351570191</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Building Battle Sequence">
+      <option name="closed" value="true" />
+      <created>1729351755774</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729351755774</updated>
+    </task>
+    <task id="LOCAL-00012" summary="HP still won't change">
+      <option name="closed" value="true" />
+      <created>1729414248779</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729414248779</updated>
+    </task>
+    <task id="LOCAL-00013" summary="HP still won't change">
+      <option name="closed" value="true" />
+      <created>1729414299780</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729414299780</updated>
+    </task>
+    <task id="LOCAL-00014" summary="gotta throw exceptions for potion">
+      <option name="closed" value="true" />
+      <created>1729591839140</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729591839140</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Gotta throw exceptions in use_pot in pot_inv">
+      <option name="closed" value="true" />
+      <created>1729592011799</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729592011799</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,7 +269,16 @@
     <MESSAGE value="setup project" />
     <MESSAGE value="added packages" />
     <MESSAGE value="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added:&#10;Prompt_Caller&#10;Input_Taker (to be adjusted)" />
+    <MESSAGE value="Merge pull request #5 from DMKuZu/DMKuZu&#10;&#10;Merge pull request #4 from DMKuZu/main" />
+    <MESSAGE value="can run the start menu commands" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java&#10;#&#9;src/game/Input_Processor.java&#10;#&#9;src/game/List_of_Commands.java&#10;#&#9;src/game/Prompt_Display.java" />
+    <MESSAGE value="Building Battle Sequence" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java&#10;#&#9;src/game/List_of_Commands.java" />
+    <MESSAGE value="HP still won't change" />
+    <MESSAGE value="gotta throw exceptions for potion" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java" />
+    <MESSAGE value="Gotta throw exceptions in use_pot in pot_inv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gotta throw exceptions in use_pot in pot_inv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
