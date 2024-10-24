@@ -1,8 +1,8 @@
-package game;
+import game.Game_Start;
 
 public class Main{
     public static void main(String[] args){
-        Command_Runner start_game = new Command_Runner();
+        Game_Start start_game = new Game_Start();
 
         start_game.startMenu();
     }

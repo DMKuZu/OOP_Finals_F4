@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="Gotta throw exceptions in use_pot in pot_inv">
+    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="need pa reward system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/hero/Radea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Radea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/potion/Potions_Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/potion/Potions_Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Command_Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Command_Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Input_Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Input_Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/List_of_Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/List_of_Commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Prompt_Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Prompt_Display.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +238,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729592011799</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Reward system then choose area">
+      <option name="closed" value="true" />
+      <created>1729775988033</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729775988033</updated>
+    </task>
+    <task id="LOCAL-00017" summary="need pa reward system">
+      <option name="closed" value="true" />
+      <created>1729776018001</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729776018001</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,9 +291,11 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java&#10;#&#9;src/game/List_of_Commands.java" />
     <MESSAGE value="HP still won't change" />
     <MESSAGE value="gotta throw exceptions for potion" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java" />
     <MESSAGE value="Gotta throw exceptions in use_pot in pot_inv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gotta throw exceptions in use_pot in pot_inv" />
+    <MESSAGE value="Reward system then choose area" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java" />
+    <MESSAGE value="need pa reward system" />
+    <option name="LAST_COMMIT_MESSAGE" value="need pa reward system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
