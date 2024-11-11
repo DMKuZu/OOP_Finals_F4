@@ -3,27 +3,68 @@ package game;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
 
 public class Input_Processor implements List_of_Commands{
     private String input;
-    private BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-    public int getInput(int listIndex) {             ////should return the index of the command from the given index pointing to a list in the master
+    protected String getInput(String from) {
         while (true) {
             try {
                 System.out.print("\r|| >>> ");
                 input = in.readLine().toLowerCase();
 
-                List<String> currList = master.get(listIndex);
-                for(int i = 0; i < currList.size(); i++){
-                    if(currList.get(i).equals(input)){
-                        System.out.println("||--------------------------------------------------------------------------||");
-                        return i;       ////mureturn ni sa index sa currlist para sa command_runner ra ka maglihok
-                    }
+                switch (from){
+                    case "start menu":
+                        if(STARTMENU.containsKey(input)){
+                            System.out.println("||--------------------------------------------------------------------------||");
+                            System.out.flush();
+                            return STARTMENU.get(input);
+                        }
+                        break;
+                    case "choose hero":
+                        if(CHOOSEHERO.containsKey(input)){
+                            System.out.println("||--------------------------------------------------------------------------||");
+                            System.out.flush();
+                            return CHOOSEHERO.get(input);
+                        }
+                        break;
+                    case "press to continue":
+                        if(PRESS.containsKey(input)){
+                            System.out.println("||--------------------------------------------------------------------------||");
+                            System.out.flush();
+                            return PRESS.get(input);
+                        }
+                        break;
+                    case "trance":
+                        if(TRANCE.containsKey(input)){
+                            System.out.println("||--------------------------------------------------------------------------||");
+                            System.out.flush();
+                            return TRANCE.get(input);
+                        }
+                        break;
+                    case "battle":
+                        if(BATTLE.containsKey(input)){
+                            System.out.println("||--------------------------------------------------------------------------||");
+                            System.out.flush();
+                            return BATTLE.get(input);
+                        }
+                        break;
+                    case "choose skill":
+                        if(CHOOSESKILL.containsKey(input)){
+                            System.out.println("||--------------------------------------------------------------------------||");
+                            System.out.flush();
+                            return CHOOSESKILL.get(input);
+                        }
+                        break;
+                    case "choose favor":
+                        if(CHOOSEFAVOR.containsKey(input)){
+                            System.out.println("||--------------------------------------------------------------------------||");
+                            System.out.flush();
+                            return CHOOSEFAVOR.get(input);
+                        }
+                        break;
                 }
-
-                System.out.flush();     ////will reset the input and keep asking for the input until sakto ang command
             }
             catch (IOException e) {
                 System.out.println("An error occurred while reading input. Please try again.");
