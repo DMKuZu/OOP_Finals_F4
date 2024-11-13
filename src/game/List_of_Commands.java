@@ -63,16 +63,6 @@ public interface List_of_Commands {
 
     );
 
-
-    Map<String,String> PRESS = Map.ofEntries(
-            Map.entry("exit","exit"),
-            Map.entry("",""),
-            Map.entry("skip","skip"),
-            Map.entry("back","back"),
-            Map.entry("continue","continue"),
-            Map.entry("cont","continue")
-    );
-
     Map<String,String> FORK = Map.ofEntries(
             Map.entry("1","1"),
             Map.entry("2","2")

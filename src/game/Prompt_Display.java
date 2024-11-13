@@ -22,7 +22,7 @@ public class Prompt_Display implements  List_of_Texts{
         worldCtr = 0;
     }
 
-    private void nextPrompt(){
+    protected void nextPrompt(){
         for(int i = 0; i < 5; i++){
             System.out.println("\033[H\033[2J");
             System.out.flush();
@@ -349,24 +349,24 @@ public class Prompt_Display implements  List_of_Texts{
 //battle prompt
 ///////*****************************************************
     protected void battle_skills(Chosen_Hero hero, Current_Enemy enemy){
-    nextPrompt();
-    header();
-    System.out.println("||--------------------------------------------------------------------------||");
-    System.out.printf ("|| %s\n",enemy.getNAME());
-    System.out.printf ("|| HP: %d | %d\n",enemy.getCURRSTATS().getHP(),enemy.getSTATS().getHP());
-    System.out.println("||");
-    System.out.println("||");
-    System.out.printf ("|| %s\n",hero.getNAME());
-    System.out.printf ("|| HP: %d | %d\n",hero.getCURRSTATS().getHP(),hero.getSTATS().getHP());
-    System.out.println("||");
-    System.out.println("|| Choose the number of the skill!");
-    System.out.printf ("|| > 1 : %s = Unlimited uses\n",hero.getSKILL_NAME(1));
-    System.out.printf ("|| > 2 : %s = %d | %d uses\n",hero.getSKILL_NAME(2),hero.getCURR_USES(2),hero.getTOTAL_USES(2));
-    System.out.printf ("|| > 3 : %s = %d | %d uses\n",hero.getSKILL_NAME(3),hero.getCURR_USES(3),hero.getTOTAL_USES(3));
-    System.out.printf ("|| > 4 : %s = %d | %d uses\n",hero.getSKILL_NAME(4),hero.getCURR_USES(4),hero.getTOTAL_USES(4));
-    System.out.printf ("|| > 5 : %s = %d | %d uses\n",hero.getSKILL_NAME(5),hero.getCURR_USES(5),hero.getTOTAL_USES(5));
-    System.out.println("|| > 6 : BACK");
-}
+        nextPrompt();
+        header();
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.printf ("|| %s\n",enemy.getNAME());
+        System.out.printf ("|| HP: %d | %d\n",enemy.getCURRSTATS().getHP(),enemy.getSTATS().getHP());
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero.getNAME());
+        System.out.printf ("|| HP: %d | %d\n",hero.getCURRSTATS().getHP(),hero.getSTATS().getHP());
+        System.out.println("||");
+        System.out.println("|| Choose the number of the skill!");
+        System.out.printf ("|| > 1 : %s = Unlimited uses\n",hero.getSKILL_NAME(1));
+        System.out.printf ("|| > 2 : %s = %d | %d uses\n",hero.getSKILL_NAME(2),hero.getCURR_USES(2),hero.getTOTAL_USES(2));
+        System.out.printf ("|| > 3 : %s = %d | %d uses\n",hero.getSKILL_NAME(3),hero.getCURR_USES(3),hero.getTOTAL_USES(3));
+        System.out.printf ("|| > 4 : %s = %d | %d uses\n",hero.getSKILL_NAME(4),hero.getCURR_USES(4),hero.getTOTAL_USES(4));
+        System.out.printf ("|| > 5 : %s = %d | %d uses\n",hero.getSKILL_NAME(5),hero.getCURR_USES(5),hero.getTOTAL_USES(5));
+        System.out.println("|| > 6 : BACK");
+    }
 
     protected void battle_hero_action(Chosen_Hero hero, Current_Enemy enemy, String msg){
         nextPrompt();

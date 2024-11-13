@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Quaceron_Enemy implements List_of_Quaceron_Enemies, List_of_Characters {
-    private String name;
-    private List<String> SKILL_NAME;
-    private List<Integer> BASE_DMG;
+    private final String name;
+    private final List<String> SKILL_NAME;
+    private final List<Integer> BASE_DMG;
 
-    private String enemyType;
+    private final String enemyType;
 
     protected void init(Current_Enemy enemy){
         enemy.setNAME(name);
@@ -53,6 +53,7 @@ public class Quaceron_Enemy implements List_of_Quaceron_Enemies, List_of_Charact
                 enemyType = "norm";
                 break;
             case 11:
+            default:
                 if(isNorm){
                     name = Norm_List.get(4);
                     SKILL_NAME = QuaNormV5_SKILL_NAME;
@@ -65,12 +66,6 @@ public class Quaceron_Enemy implements List_of_Quaceron_Enemies, List_of_Charact
                     BASE_DMG = Qua_BASE_DMG;
                     enemyType = "elite";
                 }
-                break;
-            case 13:
-                name = NAME_List.get("mazupe");
-                SKILL_NAME = MAZUPE_SKILL_NAME;
-                BASE_DMG =MAZUPE_BASE_DMG;
-                enemyType = "boss";
                 break;
         }
     }

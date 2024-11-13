@@ -7,12 +7,12 @@ public class Favors_Inventory {
     private ArrayList<Favor> favor_List;
     private int favorSize;
 
-    private void set_demo_favors() {
+/*    private void set_demo_favors() {
         favor_List.add(new Favor(0));
         favor_List.add(new Favor(2));
         favor_List.add(new Favor(5));
         favorSize = 3;
-    }
+    }*/
 
     private void set_favors() {
         favor_List.add(new Favor());

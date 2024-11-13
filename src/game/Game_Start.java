@@ -4,6 +4,10 @@ import elements.blessing.Blessing;
 import elements.blessing.Blessing_Gacha;
 import elements.enemy.*;
 import elements.hero.Chosen_Hero;
+import elements.hero.mazupe.Mazupe;
+import elements.hero.radea.Radea;
+import elements.hero.supaidolsirkhai.Supa;
+import elements.hero.zipau.Zipau;
 
 
 public class Game_Start {
@@ -45,7 +49,21 @@ public class Game_Start {
         prompt.introPrompt();
         String cmd = input.getInput("choose hero");
 
-        hero = new Chosen_Hero(cmd);
+
+        switch (cmd){
+            case "radea":
+                hero = new Radea();
+                break;
+            case "mazupe":
+                hero = new Mazupe();
+                break;
+            case "zipau":
+                hero = new Zipau();
+                break;
+            default:
+                hero = new Supa();
+        }
+
         bless = new Blessing_Gacha();
         encounterCtr = 0;
         worldCtr = 0;
@@ -117,7 +135,7 @@ public class Game_Start {
                 isNorm = cmd.equals("2"); //1 is elite and 2 is norm
             }
 
-            enemy = new Current_Enemy(hero,worldCtr,encounterCtr,isNorm);
+            this.enemy = new Current_Enemy(hero,worldCtr,encounterCtr,isNorm);
             encounter_battle_choice();
         }
         else{
@@ -181,7 +199,10 @@ public class Game_Start {
                     break;
             }
 
-            trance_exchanged(msg);
+            prompt.trance_exchanged(msg);
+            input.getInput("press to continue");
+
+            trance_offer();
         }
 
         else if(hero.getESSENCE() > 0 && hero.getFAVOR().getFavorSize() < 3){    // offer pull
@@ -204,13 +225,6 @@ public class Game_Start {
                 trance_offer();
                 break;
         }
-    }
-
-    private void trance_exchanged(String msg){
-        prompt.trance_exchanged(msg);
-        input.getInput("press to continue");
-
-        trance_offer();
     }
 
     private void encounter_event(){

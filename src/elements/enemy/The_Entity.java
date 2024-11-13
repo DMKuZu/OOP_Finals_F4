@@ -33,6 +33,6 @@ public class The_Entity {
                 25,
                 30
         );
-        enemyType = "boss";
+        enemyType = "final";
     }
 }
