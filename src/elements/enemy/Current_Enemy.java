@@ -2,7 +2,11 @@ package elements.enemy;
 
 
 import calculator.Skill_Calculator;
-import elements.stat.Stats;
+
+import elements.hero.mazupe.Mazupe;
+import elements.hero.radea.Radea;
+import elements.hero.zipau.Zipau;
+import elements.value.Stats;
 import elements.hero.Chosen_Hero;
 
 import java.util.List;
@@ -19,10 +23,13 @@ public class Current_Enemy {
 
     private String enemyType;
 
+    private Chosen_Hero BOSS;
+
     private final Skill_Calculator calc = new Skill_Calculator();
 
     public String getNAME() {
         return NAME;
+
     }
     public Stats getSTATS() {
         return STATS;
@@ -36,6 +43,7 @@ public class Current_Enemy {
     public String getEnemyType() {
         return enemyType;
     }
+
 
     protected void setNAME(String NAME) {
         this.NAME = NAME;
@@ -76,17 +84,28 @@ public class Current_Enemy {
         double finalDODGE = 0.01 + Math.random() * (0.04 - 0.01);
         double finalCRIT = 0.01 + Math.random() * (0.04 - 0.01);
 
+
+
+        STATS = new Stats(bossHP,bossATK,bossDEF,bossDODGE,bossCRIT);
+        CURRSTATS = new Stats(bossHP,bossATK,bossDEF,bossDODGE,bossCRIT);
+
+
         switch(hero.getNAME().toLowerCase()){
             case "radea":
                 switch (worldCtr) {
                     case 1:
-                        new Quaceron_Enemy(encounterCtr,isNorm).init(this);
+
+                        if(encounterCtr == 13) BOSS = new Mazupe(STATS,CURRSTATS);
+                        else new Quaceron_Enemy(encounterCtr,isNorm).init(this);
                         break;
                     case 2:
-                        new Azrueian_Enemy(encounterCtr,isNorm).init(this);
+                        if(encounterCtr == 13) BOSS = new Zipau(STATS,CURRSTATS);
+                        else new Azrueian_Enemy(encounterCtr,isNorm).init(this);
                         break;
                     case 3:
-                        new Saroian_Enemy(encounterCtr,isNorm).init(this);
+                        if(encounterCtr == 13) BOSS = new Radea(STATS,CURRSTATS);
+                        else new Saroian_Enemy(encounterCtr,isNorm).init(this);
+
                         break;
                     case 4:
                         new The_Entity().init(this);
@@ -96,13 +115,18 @@ public class Current_Enemy {
             case "mazupe":
                 switch (worldCtr) {
                     case 1:
-                        new Azrueian_Enemy(encounterCtr,isNorm).init(this);
+
+                        if(encounterCtr == 13) BOSS = new Zipau(STATS,CURRSTATS);
+                        else new Azrueian_Enemy(encounterCtr,isNorm).init(this);
                         break;
                     case 2:
-                        new Saroian_Enemy(encounterCtr,isNorm).init(this);
+                        if(encounterCtr == 13) BOSS = new Radea(STATS,CURRSTATS);
+                        else new Saroian_Enemy(encounterCtr,isNorm).init(this);
                         break;
                     case 3:
-                        new Quaceron_Enemy(encounterCtr,isNorm).init(this);
+                        if(encounterCtr == 13) BOSS = new Mazupe(STATS,CURRSTATS);
+                        else new Quaceron_Enemy(encounterCtr,isNorm).init(this);
+
                         break;
                     case 4:
                         new The_Entity().init(this);
@@ -113,13 +137,18 @@ public class Current_Enemy {
             default:
                 switch (worldCtr) {
                     case 1:
-                        new Saroian_Enemy(encounterCtr,isNorm).init(this);
+
+                        if(encounterCtr == 13) BOSS = new Radea(STATS,CURRSTATS);
+                        else new Saroian_Enemy(encounterCtr,isNorm).init(this);
                         break;
                     case 2:
-                        new Quaceron_Enemy(encounterCtr,isNorm).init(this);
+                        if(encounterCtr == 13) BOSS = new Mazupe(STATS,CURRSTATS);
+                        else new Quaceron_Enemy(encounterCtr,isNorm).init(this);
                         break;
                     case 3:
-                        new Azrueian_Enemy(encounterCtr,isNorm).init(this);
+                        if(encounterCtr == 13) BOSS = new Zipau(STATS,CURRSTATS);
+                        else new Azrueian_Enemy(encounterCtr,isNorm).init(this);
+
                         break;
                     case 4:
                         new The_Entity().init(this);
@@ -149,10 +178,8 @@ public class Current_Enemy {
                     CURRSTATS = new Stats(eliteHP, eliteATK, eliteDEF, eliteDODGE, eliteCRIT);
                 }
                 break;
-            case 13:
-                STATS = new Stats(bossHP,bossATK,bossDEF,bossDODGE,bossCRIT);
-                CURRSTATS = new Stats(bossHP,bossATK,bossDEF,bossDODGE,bossCRIT);
-                break;
+
+
         }
 
         if(worldCtr == 4){
@@ -162,13 +189,108 @@ public class Current_Enemy {
     }
 
 
-    private String use_skill(int skillNum, Chosen_Hero hero){
+    public String attack(Chosen_Hero hero){
+        Random rand = new Random();
+        int skillNum; String msg = "";
+        switch (enemyType){
+            case "norm":
+                skillNum = rand.nextInt(3)+1;
+                msg = norm_skill(skillNum,hero);
+                break;
+            case "elite":
+                skillNum = rand.nextInt(4)+1;
+                msg = elite_skill(skillNum,hero);
+                break;
+            case "boss":
+                skillNum = rand.nextInt(5)+1;
+                msg = BOSS.boss_use_skill(skillNum,hero);
+                break;
+            case "final":
+                skillNum = rand.nextInt(5)+1;
+                msg = final_skill(skillNum,hero);
+                break;
+        }
+
+        return msg;
+    }
+
+    private String norm_skill(int skillNum, Chosen_Hero hero){
         int damage = 0;
         boolean isAHit = false;
         boolean[] isCrit = new boolean[1];
-        // 3 skills -> cases 1 to 3 for norm
-        // 4 skills -> cases 1 to 4 for elite
-        // 5 skills -> cases 1 to 5 for boss
+
+        switch (skillNum){
+            case 1:
+                damage = calc.calculate_damage(BASE_DMG.get(0), CURRSTATS.getATK(), CURRSTATS.getCRIT(),hero.getCURRSTATS().getDEF(),isCrit);
+                isAHit = calc.hit_chance(hero.getCURRSTATS().getDODGE());
+                break;
+            case 2:
+                damage = calc.calculate_damage(BASE_DMG.get(1), CURRSTATS.getATK(), CURRSTATS.getCRIT(),hero.getCURRSTATS().getDEF(),isCrit);
+                isAHit = calc.hit_chance(hero.getCURRSTATS().getDODGE());
+                break;
+            case 3:
+                damage = calc.calculate_damage(BASE_DMG.get(2), CURRSTATS.getATK(), CURRSTATS.getCRIT(),hero.getCURRSTATS().getDEF(),isCrit);
+                isAHit = calc.hit_chance(hero.getCURRSTATS().getDODGE());
+                break;
+        }
+
+        int heroHP = hero.getCURRSTATS().getHP();
+        if(isAHit){
+            hero.getCURRSTATS().setHP(Math.max(heroHP - damage, 0));
+
+            if(isCrit[0]) return "Used " + getSKILL_NAME(1) + ".\n|| CRIT! Dealt " + damage + " damage!";
+            else return "Used " + getSKILL_NAME(1) + ".\n|| Dealt " + damage + " damage!";
+        }
+        else{
+            return "Skill missed!";
+        }
+    }
+
+    private String elite_skill(int skillNum, Chosen_Hero hero){
+        int damage = 0;
+        boolean isAHit = false;
+        boolean[] isCrit = new boolean[1];
+
+
+        switch (skillNum){
+            case 1:
+                damage = calc.calculate_damage(BASE_DMG.get(0), CURRSTATS.getATK(), CURRSTATS.getCRIT(),hero.getCURRSTATS().getDEF(),isCrit);
+                isAHit = calc.hit_chance(hero.getCURRSTATS().getDODGE());
+                break;
+            case 2:
+                damage = calc.calculate_damage(BASE_DMG.get(1), CURRSTATS.getATK(), CURRSTATS.getCRIT(),hero.getCURRSTATS().getDEF(),isCrit);
+                isAHit = calc.hit_chance(hero.getCURRSTATS().getDODGE());
+                break;
+            case 3:
+                damage = calc.calculate_damage(BASE_DMG.get(2), CURRSTATS.getATK(), CURRSTATS.getCRIT(),hero.getCURRSTATS().getDEF(),isCrit);
+                isAHit = calc.hit_chance(hero.getCURRSTATS().getDODGE());
+                break;
+            case 4:
+                damage = calc.calculate_damage(BASE_DMG.get(3), CURRSTATS.getATK(), CURRSTATS.getCRIT(),hero.getCURRSTATS().getDEF(),isCrit);
+                isAHit = calc.hit_chance(hero.getCURRSTATS().getDODGE());
+                break;
+
+        }
+
+        int heroHP = hero.getCURRSTATS().getHP();
+        if(isAHit){
+            hero.getCURRSTATS().setHP(Math.max(heroHP - damage, 0));
+
+
+            if(isCrit[0]) return "Used " + getSKILL_NAME(1) + ".\n|| CRIT! Dealt " + damage + " damage!";
+            else return "Used " + getSKILL_NAME(1) + ".\n|| Dealt " + damage + " damage!";
+
+        }
+        else{
+            return "Skill missed!";
+        }
+    }
+
+
+    private String final_skill(int skillNum, Chosen_Hero hero){
+        int damage = 0;
+        boolean isAHit = false;
+        boolean[] isCrit = new boolean[1];
 
         switch (skillNum){
             case 1:
@@ -197,32 +319,11 @@ public class Current_Enemy {
         if(isAHit){
             hero.getCURRSTATS().setHP(Math.max(heroHP - damage, 0));
 
-            if(isCrit[0]) return "Used " + getSKILL_NAME(skillNum) + ". CRIT! Dealt " + damage + " damage!";
-            else return "Used " + getSKILL_NAME(skillNum) + ". Dealt " + damage + " damage!";
+            if(isCrit[0]) return "Used " + getSKILL_NAME(1) + ".\n|| CRIT! Dealt " + damage + " damage!";
+            else return "Used " + getSKILL_NAME(1) + ".\n|| Dealt " + damage + " damage!";
         }
         else{
             return "Skill missed!";
         }
-    }
-
-    public String attack(Chosen_Hero hero){
-        Random rand = new Random();
-        int skillNum; String msg = "";
-        switch (enemyType){
-            case "norm":
-                skillNum = rand.nextInt(3)+1;
-                msg = use_skill(skillNum,hero);
-                break;
-            case "elite":
-                skillNum = rand.nextInt(4)+1;
-                msg = use_skill(skillNum,hero);
-                break;
-            case "boss":
-                skillNum = rand.nextInt(5)+1;
-                msg = use_skill(skillNum,hero);
-                break;
-        }
-
-        return msg;
     }
 }

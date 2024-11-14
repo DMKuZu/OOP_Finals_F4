@@ -16,26 +16,35 @@ public class Prompt_Display implements  List_of_Texts{
     protected void setWorldCtr(int worldCtr) {
         this.worldCtr = worldCtr;
     }
+
     protected Prompt_Display(){
         encounterCtr = 0;
         worldCtr = 0;
     }
 
-    private void nextPrompt(){
-        for(int i = 0; i < 10; i++){
+
+    protected void nextPrompt(){
+        for(int i = 0; i < 5; i++){
+
             System.out.println("\033[H\033[2J");
             System.out.flush();
         }
     }
 
     private void header(){
-        System.out.printf("                    Encounter %d    of    World %d\n",encounterCtr,worldCtr);
+
+        if(worldCtr < 4 && encounterCtr < 13)   System.out.printf ("                      Encounter %d    of    Chapter %d\n",encounterCtr,worldCtr);
+        else if(encounterCtr == 13)             System.out.printf ("                        World Boss    of    Chapter %d\n",worldCtr);
+        if(worldCtr == 4)                       System.out.println("                          The Final Battle");
+
     }
 
 //Start menu prompt
 ///////*****************************************************
 
-    protected void startMenu() {             ///this is the start menu
+
+    protected void startMenu() {             //this is the start menu
+
         nextPrompt();
         System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| The Entity");
@@ -88,10 +97,9 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("||");
         System.out.println("|| Choose your character:");
         System.out.println("||");
-        System.out.println("|| > Radea");
-        System.out.println("|| > Mazupe");
-        System.out.println("|| > Zipau");
-        System.out.println("||");
+        System.out.println("|| > 1 : Radea");
+        System.out.println("|| > 2 : Mazupe");
+        System.out.println("|| > 3 : Zipau");
     }
 
     protected void atlas() {
@@ -188,15 +196,18 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("||--------------------------------------------------------------------------||");
         System.out.println(startOfWorldTexts.get(worldCtr-1));
         System.out.println("||");
-        System.out.println("|| > Continue...");
+
+        System.out.println("|| > Press ENTER to continue...");
+
     }
 
     protected void scenarioPrompt(){
         nextPrompt();
         System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| " + scenarioTexts_1.get(encounterCtr-1));
+
         System.out.println("||");
-        System.out.println("|| > Continue...");
+        System.out.println("|| > Press ENTER to continue...");
     }
 
     protected void victoryPrompt(String enemyName,int essence, Blessing blessing){
@@ -215,7 +226,7 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("|| +" + essence + " essence  ->  Used as an offering to The Being.");
         System.out.println("|| " + blessing.toString());
         System.out.println("||");
-        System.out.println("|| > Continue...");
+        System.out.println("|| > Press ENTER to continue...");
     }
 
     protected void defeatPrompt(String enemyName){
@@ -230,11 +241,23 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("|| 'perhaps this is the end...'");
         System.out.println("|| 'or perhaps... it is merely the beginning of a new, unknown journey...'");
         System.out.println("||");
-        System.out.println("|| > Continue...");
+        System.out.println("|| > Press ENTER to continue...");
     }
 
 //encounter prompts
 ///////*****************************************************
+    protected void encounter_fork(){
+        nextPrompt();
+        //dapat dynamic ni
+        System.out.println("||--------------------------------------------------------------------------||");
+        System.out.println("|| As you walk along you notice a Strong enemy in front of you.");
+        System.out.println("|| Before the enemy notices you, you start running away.");
+        System.out.println("|| When all of a sudden another enemy blocks your escape.");
+        System.out.println("||");
+        System.out.println("|| > 1 : Fight against the strong enemy");
+        System.out.println("|| > 2 : Fight the enemy blocking your escape");
+    }
+
     protected void encounter_trance(){
         nextPrompt();
         System.out.println("||--------------------------------------------------------------------------||");
@@ -253,7 +276,7 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("|| You are a mere thread, a part of a grand design. ");
         System.out.println("|| A sense of urgency returns, a renewed drive to fulfill your mission. ");
         System.out.println("||");
-        System.out.println("|| > Continue...");
+        System.out.println("|| > Press ENTER to continue...");
     }
 
     protected void trance_offer(int essence,int favorSize){
@@ -265,8 +288,8 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("||");
         System.out.println("|| You have " + essence + " essence and " + favorSize + " | 3 Favors.");
         System.out.println("|| ");
-        System.out.println("|| > Offer     -> 1 essence for 1 favor");
-        System.out.println("|| > Continue  -> Next encounter");
+        System.out.println("|| > 1 : Offer     -> 1 essence for 1 favor");
+        System.out.println("|| > 2 : Continue  -> Next encounter");
     }
 
     protected void trance_notenough(){
@@ -276,7 +299,7 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("|| ");
         System.out.println("|| You wake up and continue along your path.");
         System.out.println("|| ");
-        System.out.println("|| Continue...");
+        System.out.println("|| Press ENTER to continue...");
     }
 
     protected void trance_continue(){
@@ -284,7 +307,7 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| You wake up and continue along your path.");
         System.out.println("|| ");
-        System.out.println("|| Continue...");
+        System.out.println("|| Press ENTER to continue...");
     }
 
     protected void trance_fullinv(Favors_Inventory inv){
@@ -295,14 +318,14 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("|| Choose a favor that you want to exchange.");
         inv.swapFavorDesc();
         System.out.println("|| ");
-        System.out.println("|| > Continue  -> Next encounter");
+        System.out.println("|| > 4 : Continue  -> Next encounter");
     }
     protected void trance_exchanged(String msg){
         nextPrompt();
         System.out.println("||--------------------------------------------------------------------------||");
         System.out.println("|| " + msg);
         System.out.println("|| ");
-        System.out.println("|| > Continue...");
+        System.out.println("|| > Press ENTER to continue...");
     }
 
     protected void trance_pulled(Favor favor){
@@ -311,7 +334,7 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("|| You have obtained: ");
         System.out.println("|| " + favor.toString());
         System.out.println("|| ");
-        System.out.println("|| > Continue...");
+        System.out.println("|| > Press ENTER to continue...");
     }
 
     protected void encounter_battle_choice(Chosen_Hero hero, Current_Enemy enemy){
@@ -326,34 +349,37 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.printf ("|| HP: %d | %d\n",hero.getCURRSTATS().getHP(),hero.getSTATS().getHP());
         System.out.println("||");
         System.out.println("|| What do you want to do?");
-        System.out.println("|| > Skills");
-        System.out.println("|| > Favors");
-        System.out.println("|| > Info");
-        System.out.println("||");
+        System.out.println("|| > 1 : Skills");
+        System.out.println("|| > 2 : Favors");
+        System.out.println("|| > 3 : Info");
     }
 
 
 //battle prompt
 ///////*****************************************************
     protected void battle_skills(Chosen_Hero hero, Current_Enemy enemy){
-    nextPrompt();
-    header();
-    System.out.println("||--------------------------------------------------------------------------||");
-    System.out.printf ("|| %s\n",enemy.getNAME());
-    System.out.printf ("|| HP: %d | %d\n",enemy.getCURRSTATS().getHP(),enemy.getSTATS().getHP());
-    System.out.println("||");
-    System.out.println("||");
-    System.out.printf ("|| %s\n",hero.getNAME());
-    System.out.printf ("|| HP: %d | %d\n",hero.getCURRSTATS().getHP(),hero.getSTATS().getHP());
-    System.out.println("||");
-    System.out.println("|| Choose the number of the skill!");
-    System.out.printf ("|| > 1 : %s = Unlimited uses\n",hero.getSKILL_NAME(1));
-    System.out.printf ("|| > 2 : %s = %d | %d uses\n",hero.getSKILL_NAME(2),hero.getCURR_USES(2),hero.getTOTAL_USES(2));
-    System.out.printf ("|| > 3 : %s = %d | %d uses\n",hero.getSKILL_NAME(3),hero.getCURR_USES(3),hero.getTOTAL_USES(3));
-    System.out.printf ("|| > 4 : %s = %d | %d uses\n",hero.getSKILL_NAME(4),hero.getCURR_USES(4),hero.getTOTAL_USES(4));
-    System.out.printf ("|| > 5 : %s = %d | %d uses\n",hero.getSKILL_NAME(5),hero.getCURR_USES(5),hero.getTOTAL_USES(5));
-    System.out.println("|| > BACK");
-}
+
+        nextPrompt();
+        header();
+        System.out.println("||--------------------------------------------------------------------------||");
+
+        System.out.printf ("|| %s\n",enemy.getNAME());
+        System.out.printf ("|| HP: %d | %d\n",enemy.getCURRSTATS().getHP(),enemy.getSTATS().getHP());
+        System.out.println("||");
+        System.out.println("||");
+        System.out.printf ("|| %s\n",hero.getNAME());
+        System.out.printf ("|| HP: %d | %d\n",hero.getCURRSTATS().getHP(),hero.getSTATS().getHP());
+        System.out.println("||");
+
+        System.out.println("|| Choose the number of the skill!");
+        System.out.printf ("|| > 1 : %s = Unlimited uses\n",hero.getSKILL_NAME(1));
+        System.out.printf ("|| > 2 : %s = %d | %d uses\n",hero.getSKILL_NAME(2),hero.getCURR_USES(2),hero.getTOTAL_USES(2));
+        System.out.printf ("|| > 3 : %s = %d | %d uses\n",hero.getSKILL_NAME(3),hero.getCURR_USES(3),hero.getTOTAL_USES(3));
+        System.out.printf ("|| > 4 : %s = %d | %d uses\n",hero.getSKILL_NAME(4),hero.getCURR_USES(4),hero.getTOTAL_USES(4));
+        System.out.printf ("|| > 5 : %s = %d | %d uses\n",hero.getSKILL_NAME(5),hero.getCURR_USES(5),hero.getTOTAL_USES(5));
+        System.out.println("|| > 6 : BACK");
+    }
+
 
     protected void battle_hero_action(Chosen_Hero hero, Current_Enemy enemy, String msg){
         nextPrompt();
@@ -362,11 +388,14 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.printf ("|| %s\n",enemy.getNAME());
         System.out.printf ("|| HP: %d | %d\n",enemy.getCURRSTATS().getHP(),enemy.getSTATS().getHP());
         System.out.println("||");
-        System.out.println("||");
         System.out.printf ("|| %s\n",hero.getNAME());
         System.out.printf ("|| HP: %d | %d\n",hero.getCURRSTATS().getHP(),hero.getSTATS().getHP());
         System.out.println("||");
+
         System.out.printf ("|| %s\n", msg);
+        System.out.println("||");
+        System.out.println("|| > Press ENTER to continue...");
+
     }
 
     protected void battle_enemy_action(Chosen_Hero hero, Current_Enemy enemy, String msg){
@@ -381,6 +410,7 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.printf ("|| %s\n",hero.getNAME());
         System.out.printf ("|| HP: %d | %d\n",hero.getCURRSTATS().getHP(),hero.getSTATS().getHP());
         System.out.println("||");
+        System.out.println("|| > Press ENTER to continue...");
     }
 
     protected void battle_favors(Chosen_Hero hero, Current_Enemy enemy) {
@@ -393,13 +423,13 @@ public class Prompt_Display implements  List_of_Texts{
         System.out.println("||");
         System.out.printf ("|| %s\n",hero.getNAME());
         System.out.printf ("|| HP: %d | %d\n",hero.getCURRSTATS().getHP(),hero.getSTATS().getHP());
+
         System.out.println("||");
         System.out.println("|| Choose the number of the favor");
         System.out.printf("|| > 1 : %s\n", hero.getFAVOR().getFavorName(1));
         System.out.printf("|| > 2 : %s\n", hero.getFAVOR().getFavorName(2));
         System.out.printf("|| > 3 : %s\n", hero.getFAVOR().getFavorName(3));
-        System.out.println("|| > BACK");
-        System.out.println("||");
+        System.out.println("|| > 4 : BACK");
     }
 
     protected void battle_info(Chosen_Hero hero){

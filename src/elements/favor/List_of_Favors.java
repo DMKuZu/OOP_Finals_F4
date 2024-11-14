@@ -6,12 +6,13 @@ import java.util.Map;
 
 public interface List_of_Favors {
     List<String> NAME_List = Arrays.asList(
-            "Blessing of Healing         ",
-            "Ode of the Warriors         ",
-            "Ballads of the Guardians    ",
-            "Song of the Winds           ",
-            "Electrifying Beats          ",
-            "Blessing of Perseverance    "
+            "Blessing of Healing",
+            "Ode of the Warriors",
+            "Ballads of the Guardians",
+            "Song of the Winds",
+            "Electrifying Beats",
+            "Blessing of Perseverance"
+
     );
 
     enum STAT{
@@ -40,12 +41,14 @@ public interface List_of_Favors {
     }
 
     Map<String, STAT> Favor_Stat = Map.ofEntries(
-            Map.entry("Blessing of Healing         ", STAT.HP),
-            Map.entry("Ode of the Warriors         ", STAT.ATK),
-            Map.entry("Ballads of the Guardians    ", STAT.DEF),
-            Map.entry("Song of the Winds           ", STAT.DODGE),
-            Map.entry("Electrifying Beats          ", STAT.CRIT),
-            Map.entry("Blessing of Perseverance    ", STAT.USES)
+
+            Map.entry("Blessing of Healing", STAT.HP),
+            Map.entry("Ode of the Warriors", STAT.ATK),
+            Map.entry("Ballads of the Guardians", STAT.DEF),
+            Map.entry("Song of the Winds", STAT.DODGE),
+            Map.entry("Electrifying Beats", STAT.CRIT),
+            Map.entry("Blessing of Perseverance", STAT.USES)
+
     );
 
 

@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="need pa reward system">
+
+    <list default="true" id="58e45557-0459-4819-ae87-c805723bb70c" name="Changes" comment="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/calculator/Skill_Calculator.java&#10;#&#9;src/elements/enemy/Current_Enemy.java&#10;#&#9;src/elements/favor/Favors_Inventory.java&#10;#&#9;src/elements/hero/Chosen_Hero.java&#10;#&#9;src/elements/hero/List_of_Characters.java&#10;#&#9;src/elements/hero/Mazupe.java&#10;#&#9;src/elements/hero/Radea.java&#10;#&#9;src/elements/hero/Zipau.java&#10;#&#9;src/game/Game_Start.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculate/Skill_Damage_Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/blessing/Blessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/blessing/Blessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/blessing/Blessing_Gacha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/blessing/Blessing_Gacha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/blessing/Blessing_Handler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/blessing/List_of_Blessings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/blessing/List_of_Blessings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/enemy/Azrueian_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Azrueian_Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Current_Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/enemy/Quaceron_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Quaceron_Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/enemy/Saroian_Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/Saroian_Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/enemy/The_Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/enemy/The_Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/favor/Favor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/favor/Favor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/favor/Favors_Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/favor/Favors_Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/favor/List_of_Favors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/favor/List_of_Favors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/Chosen_Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Command_Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Command_Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/List_of_Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/List_of_Characters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/Mazupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/mazupe/Mazupe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/Radea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/radea/Radea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/Supa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/supaidolsirkhai/Supa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/hero/Zipau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/hero/zipau/Zipau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game_Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game_Start.java" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/game/Input_Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Input_Processor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/List_of_Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/List_of_Commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Prompt_Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Prompt_Display.java" afterDir="false" />
@@ -91,12 +109,12 @@
 }</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OOP_Finals_F4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.Prompt_Display" />
-          <option name="ENABLED" value="true" />
+          <option name="ENABLED" value="false" />
         </pattern>
       </extension>
       <method v="2">
@@ -254,7 +272,65 @@
       <option name="project" value="LOCAL" />
       <updated>1729776018001</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+
+    <task id="LOCAL-00018" summary="Beta test na essentially">
+      <option name="closed" value="true" />
+      <created>1731337980818</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1731337980818</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Beta test na essentially">
+      <option name="closed" value="true" />
+      <created>1731338054791</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1731338054791</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Beta test na essentially">
+      <option name="closed" value="true" />
+      <created>1731338073654</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1731338073654</updated>
+    </task>
+    <task id="LOCAL-00021" summary="natanggal na ang useless callInput">
+      <option name="closed" value="true" />
+      <created>1731421245999</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1731421245999</updated>
+    </task>
+    <task id="LOCAL-00022" summary="natanggal na ang useless callInput">
+      <option name="closed" value="true" />
+      <created>1731478015616</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1731478015616</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/calculator/Skill_Calculator.java&#10;#&#9;src/elements/enemy/Current_Enemy.java&#10;#&#9;src/elements/favor/Favors_Inventory.java&#10;#&#9;src/elements/hero/Chosen_Hero.java&#10;#&#9;src/elements/hero/List_of_Characters.java&#10;#&#9;src/elements/hero/Mazupe.java&#10;#&#9;src/elements/hero/Radea.java&#10;#&#9;src/elements/hero/Zipau.java&#10;#&#9;src/game/Game_Start.java">
+      <option name="closed" value="true" />
+      <created>1731478056475</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1731478056475</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/calculator/Skill_Calculator.java&#10;#&#9;src/elements/enemy/Current_Enemy.java&#10;#&#9;src/elements/favor/Favors_Inventory.java&#10;#&#9;src/elements/hero/Chosen_Hero.java&#10;#&#9;src/elements/hero/List_of_Characters.java&#10;#&#9;src/elements/hero/Mazupe.java&#10;#&#9;src/elements/hero/Radea.java&#10;#&#9;src/elements/hero/Zipau.java&#10;#&#9;src/game/Game_Start.java">
+      <option name="closed" value="true" />
+      <created>1731478077039</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1731478077039</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,7 +371,13 @@
     <MESSAGE value="Reward system then choose area" />
     <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/game/Command_Runner.java" />
     <MESSAGE value="need pa reward system" />
-    <option name="LAST_COMMIT_MESSAGE" value="need pa reward system" />
+
+    <MESSAGE value="Beta test na essentially" />
+    <MESSAGE value="natanggal na ang useless callInput" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/calculator/Skill_Calculator.java&#10;#&#9;src/elements/enemy/Current_Enemy.java&#10;#&#9;src/elements/favor/Favors_Inventory.java&#10;#&#9;src/elements/hero/Chosen_Hero.java&#10;#&#9;src/elements/hero/List_of_Characters.java&#10;#&#9;src/elements/hero/Mazupe.java&#10;#&#9;src/elements/hero/Radea.java&#10;#&#9;src/elements/hero/Zipau.java&#10;#&#9;src/game/Game_Start.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/DMKuZu' into DMKuZu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/calculator/Skill_Calculator.java&#10;#&#9;src/elements/enemy/Current_Enemy.java&#10;#&#9;src/elements/favor/Favors_Inventory.java&#10;#&#9;src/elements/hero/Chosen_Hero.java&#10;#&#9;src/elements/hero/List_of_Characters.java&#10;#&#9;src/elements/hero/Mazupe.java&#10;#&#9;src/elements/hero/Radea.java&#10;#&#9;src/elements/hero/Zipau.java&#10;#&#9;src/game/Game_Start.java" />
+
+
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -309,5 +391,8 @@
         <breakpoint enabled="true" type="java-exception" />
       </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OOP_Finals_F4$Main.ic" NAME="Main Coverage Results" MODIFIED="1731417930646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

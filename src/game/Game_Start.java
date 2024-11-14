@@ -1,9 +1,15 @@
 package game;
 
 import elements.blessing.Blessing;
-import elements.blessing.Blessing_Handler;
+
+import elements.blessing.Blessing_Gacha;
 import elements.enemy.*;
 import elements.hero.Chosen_Hero;
+import elements.hero.mazupe.Mazupe;
+import elements.hero.radea.Radea;
+import elements.hero.supaidolsirkhai.Supa;
+import elements.hero.zipau.Zipau;
+
 
 
 public class Game_Start {
@@ -16,153 +22,61 @@ public class Game_Start {
     private int encounterCtr;
     private int worldCtr;
 
-    private Blessing_Handler bless;
 
+    private Blessing_Gacha bless;
+
+////////////////////////////////////// The start of everything my person
 
     public void startMenu(){
         prompt.startMenu();
         String cmd = input.getInput("start menu");
 
-        callInput("start menu", cmd);
-    }
 
-
-    private void callInput(String from, String cmd){
-        String msg = "";
-
-        switch(from) {
-            case "start menu":
-                switch (cmd) {
-                    case "start":
-                        startMenu_start();
-                        break;
-                    case "atlas":
-                        startMenu_atlas();
-                        break;
-                    case "credits":
-                        startMenu_credits();
-                        break;
-                    case "exit":
-                        startMenu_exit();
-                        break;
-                }
+        switch (cmd) {
+            case "start":
+                startMenu_start();
                 break;
-
-            case "choose hero":
-                hero = new Chosen_Hero(cmd);
-                bless = new Blessing_Handler();
-                encounterCtr = 0;
-                worldCtr = 0;
-                startWorld();
+            case "atlas":
+                startMenu_atlas();
                 break;
-
-            case "trance":
-                switch (cmd) {
-                    case "continue":
-                        prompt.trance_continue();
-                        input.getInput("press to continue");
-                        encounterChooser();
-                        break;
-                    case "offer":
-                        trance_offer();
-                        break;
-                }
+            case "credits":
+                startMenu_credits();
                 break;
+            case "exit":
+                startMenu_exit();
 
-            case "battle":
-                switch (cmd) {
-                    case "skills":
-                        battle_skills();
-                        break;
-                    case "favors":
-                        battle_favors();
-                        break;
-                    case "info":
-                        battle_info();
-                        break;
-                }
-                break;
-
-            case "choose skill":
-                switch (cmd) {
-                    case "1":
-                        msg = hero.use_skill(1, enemy);
-                        break;
-                    case "2":
-                        msg = hero.use_skill(2, enemy);
-                        break;
-                    case "3":
-                        msg = hero.use_skill(3, enemy);
-                        break;
-                    case "4":
-                        msg = hero.use_skill(4, enemy);
-                        break;
-                    case "5":
-                        msg = hero.use_skill(5, enemy);
-                        break;
-                    case "back":
-                        battle_choice();
-                        break;
-                }
-                if (msg.contains("no uses")){
-                    battle_skills();
-                }
-                else {
-                    battle_sequence(msg);
-                }
-                break;
-
-            case "choose favor":
-                switch (cmd) {
-                    case "1":
-                        msg = hero.use_favor(1);
-                        break;
-                    case "2":
-                        msg = hero.use_favor(2);
-                        break;
-                    case "3":
-                        msg = hero.use_favor(3);
-                        break;
-                    default:
-                        battle_choice();
-                        break;
-                }
-                if (msg.contains("no favors")) {
-                    battle_favors();
-                } else {
-                    battle_sequence(msg);
-                }
-                break;
-
-            case "swap favor":
-                switch (cmd){
-                    case "1":
-                        msg = hero.swapFavor(1);
-                        break;
-                    case "2":
-                        msg = hero.swapFavor(2);
-                        break;
-                    case "3":
-                        msg = hero.swapFavor(3);
-                        break;
-                    default:
-                        prompt.trance_continue();
-                        input.getInput("press to continue");
-                        encounterChooser();
-                        break;
-                }
-                trance_exchanged(msg);
                 break;
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// start menu
+
+////////////////////////////////start menu
+
 
     private void startMenu_start(){
         prompt.introPrompt();
         String cmd = input.getInput("choose hero");
 
-        callInput("choose hero",cmd);
+
+        switch (cmd){
+            case "radea":
+                hero = new Radea();
+                break;
+            case "mazupe":
+                hero = new Mazupe();
+                break;
+            case "zipau":
+                hero = new Zipau();
+                break;
+            default:
+                hero = new Supa();
+        }
+
+        bless = new Blessing_Gacha();
+        encounterCtr = 0;
+        worldCtr = 0;
+        startWorld();
+
     }
 
     private void startMenu_atlas(){
@@ -184,7 +98,9 @@ public class Game_Start {
         System.exit(0);
     }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// exposition commands
+
+/////////////////////////////////////////// exposition stuff
+
 
     private void startWorld(){
         encounterCtr = 0;
@@ -214,7 +130,9 @@ public class Game_Start {
         input.getInput("press to continue");
     }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// encounters  command
+
+/////////////////////////////////////////////////// encounter chooser
+
 
     private void encounterChooser(){
         encounterCtr++;
@@ -225,15 +143,22 @@ public class Game_Start {
             boolean isNorm = (encounterCtr != 5);
             if(encounterCtr == 11){
                 //setup ug prompt na nakakakitag norm or elite
+
+                prompt.encounter_fork();
+                String cmd = input.getInput("norm or elite");
+                isNorm = cmd.equals("2"); //1 is elite and 2 is norm
             }
 
-            enemy = new Current_Enemy(hero,worldCtr,encounterCtr,isNorm);
-            encounter_battle();
+            this.enemy = new Current_Enemy(hero,worldCtr,encounterCtr,isNorm);
+            encounter_battle_choice();
+
         }
         else{
             encounter_event();
         }
     }
+
+/////////////////////////////////////////////////// trance stuff / offer bro
 
     private void encounter_trance(){
         hero.refresh_encounter();
@@ -243,46 +168,83 @@ public class Game_Start {
 
         prompt.trance_offer(hero.getESSENCE(),hero.getFAVOR().getFavorSize());
         String cmd = input.getInput("trance");
-        callInput("trance",cmd);
+
+
+
+        switch (cmd) {
+            case "continue":
+                prompt.trance_continue();
+                input.getInput("press to continue");
+                encounterChooser();
+                break;
+            case "offer":
+                trance_offer();
+                break;
+        }
     }
 
     private void trance_offer(){
+        String cmd = "", msg = "";
+
         if(hero.getESSENCE() == 0) {   //no more essence
             prompt.trance_notenough();
             input.getInput("press to continue");
+
+
             encounterChooser();
         }
 
         else if(hero.getFAVOR().getFavorSize() == 3 && hero.getESSENCE() > 0){   //exchange favors
             prompt.trance_fullinv(hero.getFAVOR());
             hero.useESSENCE();
-            String cmd = input.getInput("choose favor");
 
-            callInput("swap favor",cmd);
+            cmd = input.getInput("choose favor");
+
+            switch (cmd){
+                case "1":
+                    msg = hero.swapFavor(1);
+                    break;
+                case "2":
+                    msg = hero.swapFavor(2);
+                    break;
+                case "3":
+                    msg = hero.swapFavor(3);
+                    break;
+                default:
+                    prompt.trance_continue();
+                    input.getInput("press to continue");
+                    encounterChooser();
+                    break;
+            }
+
+            prompt.trance_exchanged(msg);
+            input.getInput("press to continue");
+
+            trance_offer();
         }
-        else if(hero.getESSENCE() > 0 && hero.getFAVOR().getFavorSize() < 3){    // gacha pull
-            prompt.trance_pulled(hero.getFAVOR().gacha());
+
+        else if(hero.getESSENCE() > 0 && hero.getFAVOR().getFavorSize() < 3){    // offer pull
+            prompt.trance_pulled(hero.getFAVOR().offer());
+
             hero.useESSENCE();
             input.getInput("press to continue");
         }
 
         prompt.trance_offer(hero.getESSENCE(),hero.getFAVOR().getFavorSize());  // pull again
-        String cmd = input.getInput("trance");
-        callInput("trance",cmd);
-    }
 
-    private void trance_exchanged(String msg){
-        prompt.trance_exchanged(msg);
-        input.getInput("press to continue");
+        cmd = input.getInput("trance");
 
-        trance_offer();
-    }
+        switch (cmd) {
+            case "continue":
+                prompt.trance_continue();
+                input.getInput("press to continue");
 
-    private void encounter_battle(){
-        prompt.encounter_battle_choice(hero,enemy);
-        String cmd = input.getInput("battle");
-
-        callInput("battle",cmd);
+                encounterChooser();
+                break;
+            case "offer":
+                trance_offer();
+                break;
+        }
     }
 
 
@@ -293,33 +255,99 @@ public class Game_Start {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// skills, favor, stats
-    private void battle_choice(){
+
+////////////////////////////////////////////////////////// battle stuff
+
+    private void encounter_battle_choice(){
         prompt.encounter_battle_choice(hero,enemy);
         String cmd = input.getInput("battle");
 
-        callInput("battle",cmd);
+        switch (cmd) {
+            case "skills":
+                battle_skills();
+                break;
+            case "favors":
+                battle_favors();
+                break;
+            case "info":
+                battle_info();
+                break;
+        }
+
     }
 
     private void battle_skills(){
         prompt.battle_skills(hero,enemy);
-        String cmd = input.getInput("choose skill");
 
-        callInput("choose skill",cmd);
+        String cmd = "", msg = "";
+
+        while(true){
+            cmd = input.getInput("choose skill");
+            switch (cmd) {
+                case "1":
+                    msg = hero.use_skill(1, enemy);
+                    break;
+                case "2":
+                    msg = hero.use_skill(2, enemy);
+                    break;
+                case "3":
+                    msg = hero.use_skill(3, enemy);
+                    break;
+                case "4":
+                    msg = hero.use_skill(4, enemy);
+                    break;
+                case "5":
+                    msg = hero.use_skill(5, enemy);
+                    break;
+                case "back":
+                    encounter_battle_choice();
+                    break;
+            }
+            if(msg.contains("no uses")) System.out.println("|| Skill has no uses.");
+            else break;
+        }
+
+        battle_sequence(msg);
+
     }
 
     private void battle_favors(){
         prompt.battle_favors(hero,enemy);
-        String cmd = input.getInput("choose favor");
 
-        callInput("choose favor",cmd);
+        String cmd = "", msg = "";
+
+        while(true) {
+            cmd = input.getInput("choose favor");
+
+            switch (cmd) {
+                case "1":
+                    msg = hero.use_favor(1);
+                    break;
+                case "2":
+                    msg = hero.use_favor(2);
+                    break;
+                case "3":
+                    msg = hero.use_favor(3);
+                    break;
+                default:
+                    encounter_battle_choice();
+                    break;
+            }
+            if(msg.contains("no favors")) System.out.println("|| No favor at that slot.");
+            else break;
+        }
+
+        battle_sequence(msg);
+
     }
 
     private void battle_info(){
         prompt.battle_info(hero);
         input.getInput("press to continue");
 
-        battle_choice();
+
+        encounter_battle_choice();
+
     }
 
     private void battle_sequence(String msg){
@@ -346,7 +374,9 @@ public class Game_Start {
             battle_end(false,enemyType);
         }
         else {
-            battle_choice();
+
+            encounter_battle_choice();
+
         }
     }
 
