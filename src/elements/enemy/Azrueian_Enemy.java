@@ -6,11 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Azrueian_Enemy implements List_of_Azrueian_Enemies, List_of_Characters {
+
     private final String name;
     private final List<String> SKILL_NAME;
     private final List<Integer> BASE_DMG;
 
     private final String enemyType;
+
 
 
     protected void init(Current_Enemy enemy){
@@ -53,7 +55,9 @@ public class Azrueian_Enemy implements List_of_Azrueian_Enemies, List_of_Charact
                 enemyType = "norm";
                 break;
             case 11:
+
             default:
+
                 if(isNorm){
                     name = Norm_List.get(4);
                     SKILL_NAME = AzrNormV5_SKILL_NAME;

@@ -53,5 +53,4 @@ public abstract class Chosen_Hero {
     public abstract void skillDesc();
     public abstract void blessingDesc();
 
-
 }

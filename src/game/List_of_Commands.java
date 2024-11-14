@@ -63,8 +63,10 @@ public interface List_of_Commands {
 
     );
 
+
     Map<String,String> FORK = Map.ofEntries(
             Map.entry("1","1"),
             Map.entry("2","2")
+
     );
 }

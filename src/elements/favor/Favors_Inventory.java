@@ -8,10 +8,12 @@ public class Favors_Inventory {
     private int favorSize;
 
 /*    private void set_demo_favors() {
+
         favor_List.add(new Favor(0));
         favor_List.add(new Favor(2));
         favor_List.add(new Favor(5));
         favorSize = 3;
+
     }*/
 
     private void set_favors() {
@@ -41,7 +43,9 @@ public class Favors_Inventory {
         return favorSize;
     }
 
+
     public Favor offer() {
+
         Random rand = new Random();
         int favorNum = rand.nextInt(6);
 

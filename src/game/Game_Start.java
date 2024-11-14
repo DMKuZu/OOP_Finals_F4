@@ -1,6 +1,7 @@
 package game;
 
 import elements.blessing.Blessing;
+
 import elements.blessing.Blessing_Gacha;
 import elements.enemy.*;
 import elements.hero.Chosen_Hero;
@@ -8,6 +9,7 @@ import elements.hero.mazupe.Mazupe;
 import elements.hero.radea.Radea;
 import elements.hero.supaidolsirkhai.Supa;
 import elements.hero.zipau.Zipau;
+
 
 
 public class Game_Start {
@@ -20,12 +22,15 @@ public class Game_Start {
     private int encounterCtr;
     private int worldCtr;
 
+
     private Blessing_Gacha bless;
 
 ////////////////////////////////////// The start of everything my person
+
     public void startMenu(){
         prompt.startMenu();
         String cmd = input.getInput("start menu");
+
 
         switch (cmd) {
             case "start":
@@ -39,11 +44,14 @@ public class Game_Start {
                 break;
             case "exit":
                 startMenu_exit();
+
                 break;
         }
     }
 
+
 ////////////////////////////////start menu
+
 
     private void startMenu_start(){
         prompt.introPrompt();
@@ -68,6 +76,7 @@ public class Game_Start {
         encounterCtr = 0;
         worldCtr = 0;
         startWorld();
+
     }
 
     private void startMenu_atlas(){
@@ -89,7 +98,9 @@ public class Game_Start {
         System.exit(0);
     }
 
+
 /////////////////////////////////////////// exposition stuff
+
 
     private void startWorld(){
         encounterCtr = 0;
@@ -119,7 +130,9 @@ public class Game_Start {
         input.getInput("press to continue");
     }
 
+
 /////////////////////////////////////////////////// encounter chooser
+
 
     private void encounterChooser(){
         encounterCtr++;
@@ -130,6 +143,7 @@ public class Game_Start {
             boolean isNorm = (encounterCtr != 5);
             if(encounterCtr == 11){
                 //setup ug prompt na nakakakitag norm or elite
+
                 prompt.encounter_fork();
                 String cmd = input.getInput("norm or elite");
                 isNorm = cmd.equals("2"); //1 is elite and 2 is norm
@@ -137,6 +151,7 @@ public class Game_Start {
 
             this.enemy = new Current_Enemy(hero,worldCtr,encounterCtr,isNorm);
             encounter_battle_choice();
+
         }
         else{
             encounter_event();
@@ -153,6 +168,7 @@ public class Game_Start {
 
         prompt.trance_offer(hero.getESSENCE(),hero.getFAVOR().getFavorSize());
         String cmd = input.getInput("trance");
+
 
 
         switch (cmd) {
@@ -174,12 +190,14 @@ public class Game_Start {
             prompt.trance_notenough();
             input.getInput("press to continue");
 
+
             encounterChooser();
         }
 
         else if(hero.getFAVOR().getFavorSize() == 3 && hero.getESSENCE() > 0){   //exchange favors
             prompt.trance_fullinv(hero.getFAVOR());
             hero.useESSENCE();
+
             cmd = input.getInput("choose favor");
 
             switch (cmd){
@@ -207,11 +225,13 @@ public class Game_Start {
 
         else if(hero.getESSENCE() > 0 && hero.getFAVOR().getFavorSize() < 3){    // offer pull
             prompt.trance_pulled(hero.getFAVOR().offer());
+
             hero.useESSENCE();
             input.getInput("press to continue");
         }
 
         prompt.trance_offer(hero.getESSENCE(),hero.getFAVOR().getFavorSize());  // pull again
+
         cmd = input.getInput("trance");
 
         switch (cmd) {
@@ -227,11 +247,13 @@ public class Game_Start {
         }
     }
 
+
     private void encounter_event(){
         //encounter 12 will have you heal or replenish uses
 //        encounter_trance();
         encounterChooser();
     }
+
 
 
 ////////////////////////////////////////////////////////// battle stuff
@@ -251,10 +273,12 @@ public class Game_Start {
                 battle_info();
                 break;
         }
+
     }
 
     private void battle_skills(){
         prompt.battle_skills(hero,enemy);
+
         String cmd = "", msg = "";
 
         while(true){
@@ -284,10 +308,12 @@ public class Game_Start {
         }
 
         battle_sequence(msg);
+
     }
 
     private void battle_favors(){
         prompt.battle_favors(hero,enemy);
+
         String cmd = "", msg = "";
 
         while(true) {
@@ -312,13 +338,16 @@ public class Game_Start {
         }
 
         battle_sequence(msg);
+
     }
 
     private void battle_info(){
         prompt.battle_info(hero);
         input.getInput("press to continue");
 
+
         encounter_battle_choice();
+
     }
 
     private void battle_sequence(String msg){
@@ -345,7 +374,9 @@ public class Game_Start {
             battle_end(false,enemyType);
         }
         else {
+
             encounter_battle_choice();
+
         }
     }
 

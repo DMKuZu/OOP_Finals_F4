@@ -8,8 +8,10 @@ public class Input_Processor implements List_of_Commands{
     private String input;
     private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
+
     protected String getInput(String from) {
         String ret = "";
+
 
         while (true) {
             try {
@@ -20,6 +22,7 @@ public class Input_Processor implements List_of_Commands{
 
                 switch (from){
                     case "start menu":
+
                         if(STARTMENU.containsKey(input)) ret = STARTMENU.get(input);
                         else continue;
                         break;
@@ -52,6 +55,7 @@ public class Input_Processor implements List_of_Commands{
                 }
 
                 return ret;
+
             }
             catch (IOException e) {
                 System.out.println("|| An error occurred while reading input. Please try again.");

@@ -1,9 +1,11 @@
 package elements.blessing;
 
 public class Blessing {
+
     private final String name;
     private final String stat;
     private final int value;
+
 
     public Blessing(String name, String stat, int value) {
         this.name = name;

@@ -1,8 +1,10 @@
 package elements.favor;
 
 public class Favor implements List_of_Favors{
+
     private final String name;
     private final String stat;
+
     private int value;
 
 
@@ -35,8 +37,10 @@ public class Favor implements List_of_Favors{
             case "DODGE":
             case "CRIT":
                 return name + " -> Increases " + stat + " by 0." + value + " while in battle.";
+
             case "USES":
                 return name + " -> Increases current skills uses by " + value + ".";
+
             default:
                 return name + " -> Increases " + stat + " by " + value + " while in battle.";
         }

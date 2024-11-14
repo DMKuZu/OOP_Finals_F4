@@ -65,6 +65,4 @@ public interface List_of_Blessings {
             new Blessing("Gift of Reflexes", "DODGE", 10),
             new Blessing("Gift of Accuracy", "CRIT", 6)
     );
-
-
 }
